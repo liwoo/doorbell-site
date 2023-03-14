@@ -1,9 +1,11 @@
-import { AppStoreLink } from '@/components/AppStoreLink'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import {Button} from "@/components/Button";
 import Image from "next/image";
 import {useEffect, useState} from "react";
+import appScreenshotImage from '../../public/images/restaurant-screenshot.png';
+import burgerImage from '../../public/images/burger.png';
+import tomatoImage from '../../public/images/tomato.png';
 
 export function CallToAction() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -47,9 +49,9 @@ export function CallToAction() {
           <div className="mt-4 flex">
             <Button variant="outline" color="gray">Find out More</Button>
           </div>
-          <Image className="mt-8 mx-auto z-10 relative" src="/images/restaurant-screenshot.png" alt="Restaurant Screenshot" width={windowWidth * 0.15 + 150} height={400} />
-          <Image className="absolute right-0 bottom-0 z-0" src="/images/burger.png" alt="Burger" width={windowWidth * 0.4 + 100} height={400} />
-          <Image className="absolute left-0 bottom-0 z-0" src="/images/tomato.png" alt="Tomatoes" width={windowWidth * 0.08 + 80} height={400} />
+          <Image className="mt-8 mx-auto z-10 relative" src={appScreenshotImage} alt="Restaurant Screenshot" placeholder="blur" width={windowWidth * 0.15 + 150} height={400} />
+          <Image className="absolute right-0 bottom-0 z-0" src={burgerImage} alt="Burger" width={windowWidth * 0.4 + 100} height={400} />
+          <Image className="absolute left-0 bottom-0 z-0" src={tomatoImage} alt="Tomatoes" width={windowWidth * 0.08 + 80} height={400} />
           <svg className="absolute left-2/3 top-1/4 w-8 xl:w-16 xl:-mx-28 xl:top-20 z-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 90 98">
             <path stroke="#fff" strokeWidth="9" d="M56.044 68.127c-17.89-7.628-31.541-18.863-38.656-30.01-4.052-6.348-5.807-12.373-5.417-17.545.377-5.004 2.79-9.708 8.146-13.648 2.227-1.579 3.966-1.749 5.49-1.37 1.758.437 3.874 1.777 6.272 4.402 4.822 5.278 9.404 14.21 13.401 24.265 3.947 9.928 7.137 20.46 9.346 28.55a347.872 347.872 0 0 1 1.418 5.356ZM31.353 92.225c-8.502.83-14.269.242-18.137-1.015-4.572-1.485-6.52-3.894-7.497-6.438-.91-2.574-.262-4.778 1.147-6.212 1.416-1.442 4.106-2.578 8.093-1.722 1.544.407 3.616 1.634 6.063 3.752 2.4 2.076 4.804 4.695 6.98 7.335a105.457 105.457 0 0 1 3.35 4.3ZM82.338 34.37a224.81 224.81 0 0 0-1.44 8.498 32.23 32.23 0 0 1-4.226-10.07l-.016-.07-.018-.07c-1.465-5.532-1.18-11.955.38-16.383.786-2.23 1.73-3.492 2.462-4.05.493-.374.955-.535 1.883-.205l.037.014.038.012c1.15.387 1.765.993 2.203 1.85.517 1.012.86 2.555.893 4.768.06 3.968-.844 8.663-1.79 13.583a636.56 636.56 0 0 0-.406 2.123Z"/>
           </svg>
