@@ -158,7 +158,7 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Affiliates</h1>
-                        <p>We may disclose information (including personal information) about you to our Corporate Affiliates. For purposes of this Privacy Policy, "Corporate Affiliate" means any person or entity which directly or indirectly controls, is controlled by or is under common control with Doorbell, whether by ownership or otherwise. Any information relating to you that we provide to our Corporate Affiliates will be treated by those Corporate Affiliates in accordance with the terms of this Privacy Policy.</p>
+                        <p>We may disclose information (including personal information) about you to our Corporate Affiliates. For purposes of this Privacy Policy, &quot;Corporate Affiliate&quot; means any person or entity which directly or indirectly controls, is controlled by or is under common control with Doorbell, whether by ownership or otherwise. Any information relating to you that we provide to our Corporate Affiliates will be treated by those Corporate Affiliates in accordance with the terms of this Privacy Policy.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Governing Law</h1>
@@ -210,7 +210,7 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Third-Party Services</h1>
-                        <p>We may display, include or make available third-party content (including data, information, applications and other products services) or provide links to third-party websites or services ("Third- Party Services").</p>
+                        <p>We may display, include or make available third-party content (including data, information, applications and other products services) or provide links to third-party websites or services (&quot;Third- Party Services&quot;).</p>
                         <br />
                         <p>You acknowledge and agree that Doorbell shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. Doorbell does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.</p>
                         <br />
