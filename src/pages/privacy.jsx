@@ -9,7 +9,7 @@ export default function Privacy() {
                     <p className="text-base font-semibold leading-7 text-indigo-600">Updated on 09/09/2023</p>
                     <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Privacy Policy</h1>
                     <p className="mt-6 text-xl leading-8">
-                        Doorbell (“we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy
+                        Doorbell (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy
                         explains how your personal information is collected, used, and disclosed by Doorbell.
                         <br/>
                         <br/>
