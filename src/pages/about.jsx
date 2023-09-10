@@ -2,10 +2,10 @@ import MainLayout from "@/layouts/MainLayout";
 
 export default function About() {
     const stats = [
-        { label: &rsquo;Kilometers Saved&rsquo;, value: &rsquo;280k&rsquo; },
-        { label: &rsquo;Total Deliveries Made&rsquo;, value: &rsquo;93,180&rsquo; },
-        { label: &rsquo;Customers Served&rsquo;, value: &rsquo;6,563&rsquo; },
-        { label: &rsquo;Revenue Collected&rsquo;, value: &rsquo;$346k&rsquo; },
+        { label: "Kilometers Saved", value: "280k" },
+        { label: "Total Deliveries Made", value: "93,180" },
+        { label: "Customers Served", value: "6,563" },
+        { label: "Revenue Collected", value: "$346k" },
     ]
     return (
         <MainLayout title={"About | Doorbell - Zonse Momo App"}>
