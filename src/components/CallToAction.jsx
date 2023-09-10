@@ -25,7 +25,7 @@ export function CallToAction() {
   
   return (
     <section
-      id="get-free-shares-today"
+      id="call-to-action"
       className="relative overflow-hidden bg-primary pt-20 sm:pt-28"
     >
       <div className="absolute top-1/2 left-20 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
@@ -47,7 +47,7 @@ export function CallToAction() {
             and more in the Doorbell App
           </h3>
           <div className="mt-4 flex">
-            <Button variant="outline" color="gray">Find out More</Button>
+            <Button href={"/about"} variant="outline" color="gray">Find out More</Button>
           </div>
           <Image className="mt-8 mx-auto z-10 relative" src={appScreenshotImage} alt="Restaurant Screenshot" placeholder="blur" width={windowWidth * 0.15 + 150} height={400} />
           <Image className="absolute right-0 bottom-0 z-0" src={burgerImage} alt="Burger" width={windowWidth * 0.4 + 100} height={400} />

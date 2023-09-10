@@ -3,8 +3,8 @@ import {Logo} from "@/components/Logo";
 const navigation = {
   links: [
     { name: 'About Us', href: '#' },
-    { name: 'FAQs', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'FAQs', href: '/support' },
+    { name: 'Contact Us', href: '/#get-in-touch' },
   ],
   follow: [
     { name: 'Facebook', href: '#' },
@@ -12,8 +12,8 @@ const navigation = {
     { name: 'Instagram', href: '#' },
   ],
   legal: [
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Terms', href: '/terms' },
   ],
 }
 

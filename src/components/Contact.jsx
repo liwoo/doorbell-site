@@ -4,7 +4,9 @@ import Image from "next/image";
 
 export default function Contact() {
     return (
-        <div className="relative bg-white">
+        <div 
+            id={"list"}
+            className="relative bg-white">
             <div className="lg:absolute lg:inset-0 lg:left-1/2">
                 <Image
                     width={1024}

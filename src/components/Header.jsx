@@ -47,7 +47,7 @@ function MobileNavLink({ children, ...props }) {
 
 export function Header() {
   return (
-    <header className="absolute left-0 right-0">
+    <header className="absolute left-0 right-0 bg-primary">
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
@@ -98,22 +98,19 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="#features">
+                            <MobileNavLink href="/#features">
                               Features
                             </MobileNavLink>
-                            <MobileNavLink href="#reviews">
-                              Reviews
+                            <MobileNavLink href="/about">
+                              About
                             </MobileNavLink>
-                            <MobileNavLink href="#pricing">
-                              Pricing
+                            <MobileNavLink href="/#list">
+                              List
                             </MobileNavLink>
-                            <MobileNavLink href="#faqs">FAQs</MobileNavLink>
+                            <MobileNavLink href="/support">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button hrefDownload="/login" variant="outline">
-                              Log in
-                            </Button>
-                            <Button href="#">Download the app</Button>
+                            <Button href="/#download">Download the app</Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -123,15 +120,14 @@ export function Header() {
               )}
             </Popover>
             <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                href="/#get-in-touch"
                 variant="outline"
                 className="hidden lg:flex"
             >
-              <PlayIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2.5 text-gray-100">Watch the video</span>
+              <span className="ml-2.5 text-gray-100">Get in Touch</span>
             </Button>
-            <Button href="#" className="hidden lg:block bg-secondary text-gray-800">
-              Contact Us
+            <Button href="/#download" className="hidden lg:block bg-secondary text-gray-800">
+                Join the Beta
             </Button>
           </div>
         </Container>

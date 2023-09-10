@@ -6,7 +6,7 @@ import {AppStoreLink} from "@/components/AppStoreLink";
 
 function Download() {
     return (
-        <section className="py-20 bg-accent">
+        <section className="py-20 bg-accent" id={"download"}>
             <Container className="flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2">
                     <Image src="/images/screenshots.png" alt="App Screenshots" width={1080} height={720} />
@@ -15,8 +15,8 @@ function Download() {
                     <Title title="Download the app" />
                     <p>Order anything and have it delivered to your doorstep today</p>
                     <div className="my-8 flex justify-center gap-x-4">
-                        <AppStoreLink />
-                        <AppStoreLink alt />
+                        <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} />
+                        <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt />
                     </div>
                 </div>
             </Container>

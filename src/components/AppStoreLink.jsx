@@ -2,11 +2,12 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import Image from "next/image";
 
-export function AppStoreLink({color = 'black', alt = false}) {
-    const src = alt ? '/images/pre-order-ios.png' : '/images/pre-order.png'
+export function AppStoreLink({color = 'black', alt = false, link = "#"}) {
+    const src = alt ? '/images/beta-ios.png' : '/images/beta-android.png'
     return (
         <Link
-            href="#"
+            href={link}
+            target={"_blank"}
             aria-label="Pre-order on the App Store"
             className={clsx(
                 'rounded-lg transition-colors',
@@ -15,7 +16,7 @@ export function AppStoreLink({color = 'black', alt = false}) {
                     : 'bg-white text-gray-900 hover:bg-gray-50'
             )}
         >
-            <Image src={src} alt="Pre-order Now" className="h-12" width={150} height={30} />
+            <Image src={src} alt="Pre-order Now" className={"rounded-lg border-2 border-slate-400"} width={150} height={44.04} />
         </Link>
     )
 }
