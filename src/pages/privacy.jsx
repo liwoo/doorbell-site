@@ -60,7 +60,7 @@ export default function Privacy() {
                                 marketing partners, and others who provide our content or whose products or services we
                                 think may interest you.
                             </li>
-                            <li>Website: Doorbell's site, which can be accessed via this URL:</li>
+                            <li>Website: Doorbell&rsquo;s site, which can be accessed via this URL:</li>
                             <li>You: a person or entity that is registered with Doorbell to use the Services.</li>
                         </ul>
                     </div>
@@ -122,7 +122,7 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">How Long Do We Keep Your Information?</h1>
-                        <p>We keep your information only so long as we need it to provide Doorbell to you and fulfill the purposes described in this policy. This is also the case for anyone that we share your information with and who carries out services on our behalf. When we no longer need to use your information and there is no need for us to keep it to comply with our legal or regulatory obligations, we’ll either remove it from our systems or depersonalize it so that we can't identify you.</p>
+                        <p>We keep your information only so long as we need it to provide Doorbell to you and fulfill the purposes described in this policy. This is also the case for anyone that we share your information with and who carries out services on our behalf. When we no longer need to use your information and there is no need for us to keep it to comply with our legal or regulatory obligations, we’ll either remove it from our systems or depersonalize it so that we can&rsquo;t identify you.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">How Do We Protect Your Information?</h1>
@@ -170,7 +170,7 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Your Consent</h1>
-                        <p>We've updated our Privacy Policy to provide you with complete transparency into what is being set when you visit our site and how it's being used. By using our app, registering an account, or making a purchase, you hereby consent to our Privacy Policy and agree to its terms. </p>
+                        <p>We&rsquo;ve updated our Privacy Policy to provide you with complete transparency into what is being set when you visit our site and how it&rsquo;s being used. By using our app, registering an account, or making a purchase, you hereby consent to our Privacy Policy and agree to its terms. </p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Links to Other Websites</h1>
@@ -194,14 +194,14 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Blocking and disabling cookies and similar technologies</h1>
-                        <p>Wherever you're located you may also set your browser to block cookies and similar technologies, but this action may block our essential cookies and prevent our website from functioning properly, and you may not be able to fully utilize all of its features and services. You should also be aware that you may also lose some saved information (e.g. saved login details, site preferences) if you block cookies on your browser. Different browsers make different controls available to you. Disabling a cookie or category of cookie does not delete the cookie from your browser, you will need to do this yourself from within your browser, you should visit your browser's help menu for more information.</p>
+                        <p>Wherever you&rsquo;re located you may also set your browser to block cookies and similar technologies, but this action may block our essential cookies and prevent our website from functioning properly, and you may not be able to fully utilize all of its features and services. You should also be aware that you may also lose some saved information (e.g. saved login details, site preferences) if you block cookies on your browser. Different browsers make different controls available to you. Disabling a cookie or category of cookie does not delete the cookie from your browser, you will need to do this yourself from within your browser, you should visit your browser&rsquo;s help menu for more information.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Payment Details</h1>
                         <p>In respect to any credit card or other payment processing details you have provided us, we commit that this confidential information will be stored in the most secure manner possible.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
-                        <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Kids' Privacy</h1>
+                        <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Kids&rsquo; Privacy</h1>
                         <p>We do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
@@ -214,7 +214,7 @@ export default function Privacy() {
                         <br />
                         <p>You acknowledge and agree that Doorbell shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. Doorbell does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.</p>
                         <br />
-                        <p>Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties' terms and conditions.</p>
+                        <p>Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties&rsquo; terms and conditions.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Tracking Technologies</h1>
@@ -237,7 +237,7 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">What is GDPR?</h1>
-                        <p>GDPR is an EU-wide privacy and data protection law that regulates how EU residents' data is protected by companies and enhances the control the EU residents have, over their personal data.</p>
+                        <p>GDPR is an EU-wide privacy and data protection law that regulates how EU residents&rsquo; data is protected by companies and enhances the control the EU residents have, over their personal data.</p>
                         <br />
                         <p>The GDPR is relevant to any globally operating company and not just the EU-based businesses and EU residents. Our customers’ data is important irrespective of where they are located, which is why we have implemented GDPR controls as our baseline standard for all our operations worldwide.</p>
                     </div>
@@ -255,19 +255,19 @@ export default function Privacy() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Why is GDPR important?</h1>
-                        <p>GDPR adds some new requirements regarding how companies should protect individuals' personal data that they collect and process. It also raises the stakes for compliance by increasing enforcement and imposing greater fines for breach. Beyond these facts it's simply the right thing to do. At Doorbell we strongly believe that your data privacy is very important and we already have solid security and privacy practices in place that go beyond the requirements of this new regulation.</p>
+                        <p>GDPR adds some new requirements regarding how companies should protect individuals&rsquo; personal data that they collect and process. It also raises the stakes for compliance by increasing enforcement and imposing greater fines for breach. Beyond these facts it&rsquo;s simply the right thing to do. At Doorbell we strongly believe that your data privacy is very important and we already have solid security and privacy practices in place that go beyond the requirements of this new regulation.</p>
                         <br />
                         <p>The GDPR is relevant to any globally operating company and not just the EU-based businesses and EU residents. Our customers’ data is important irrespective of where they are located, which is why we have implemented GDPR controls as our baseline standard for all our operations worldwide.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
-                        <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Individual Data Subject's Rights - Data Access, Portability and Deletion</h1>
+                        <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Individual Data Subject&rsquo;s Rights - Data Access, Portability and Deletion</h1>
                         <p>We are committed to helping our customers meet the data subject rights requirements of GDPR. Doorbell processes or stores all personal data in fully vetted, DPA compliant vendors. We do store all conversation and personal data for up to 6 years unless your account is deleted. In which case, we dispose of all data in accordance with our Terms of Service and Privacy Policy, but we will not hold it longer than 60 days.</p>
                         <br />
-                        <p>We are aware that if you are working with EU customers, you need to be able to provide them with the ability to access, update, retrieve and remove personal data. We got you! We've been set up as self service from the start and have always given you access to your data and your customers data. Our customer support team is here for you to answer any questions you might have about working with the API.</p>
+                        <p>We are aware that if you are working with EU customers, you need to be able to provide them with the ability to access, update, retrieve and remove personal data. We got you! We&rsquo;ve been set up as self service from the start and have always given you access to your data and your customers data. Our customer support team is here for you to answer any questions you might have about working with the API.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Contact Us</h1>
-                        <p>Don't hesitate to contact us if you have any questions.</p>
+                        <p>Don&rsquo;t hesitate to contact us if you have any questions.</p>
                         <ul className="mt-4 gap-y-4 flex flex-col ml-8 list-disc">
                             <li>Via Email: <Link href={"mailto:cto@doorbell.mw"}>cto@doorbell.mw</Link></li>
                             <li>Via Phone Number: <Link href={"tel:+265999889000"}>+265 (0) 999 889 000</Link></li>

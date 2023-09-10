@@ -30,7 +30,7 @@ export default function Terms() {
                             <li>Device:&nbsp;any internet connected device such as a phone, tablet, computer or any other device that can be used to visit Doorbell and use the services.</li>
                             <li>Service: refers to the service provided by Doorbell as described in the relative terms (if available) and on this platform.</li>
                             <li>Third-party service:&nbsp;refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.</li>
-                            <li>Website: Doorbell's site, which can be accessed via this URL: </li>
+                            <li>Website: Doorbell&rsquo;s site, which can be accessed via this URL: </li>
                             <li>You: a person or entity that is registered with Doorbell to use the Services.</li>
                         </ul>
                         <br />
@@ -48,9 +48,9 @@ export default function Terms() {
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Return and Refund Policy</h1>
                         <p>Thanks for shopping at Doorbell. We appreciate the fact that you like to buy the stuff we build. We also want to make sure you have a rewarding experience while you’re exploring, evaluating, and purchasing our products.</p>
                         <br />
-                        <p>As with any shopping experience, there are terms and conditions that apply to transactions at Doorbell. We’ll be as brief as our attorneys will allow. The main thing to remember is that by placing an order or making a purchase at Doorbell, you agree to the terms along with Doorbell's Privacy Policy.</p>
+                        <p>As with any shopping experience, there are terms and conditions that apply to transactions at Doorbell. We’ll be as brief as our attorneys will allow. The main thing to remember is that by placing an order or making a purchase at Doorbell, you agree to the terms along with Doorbell&rsquo;s Privacy Policy.</p>
                         <br />
-                        <p>If, for any reason, You are not completely satisfied with any good or service that we provide, don't hesitate to contact us and we will discuss any of the issues you are going through with our product.</p>
+                        <p>If, for any reason, You are not completely satisfied with any good or service that we provide, don&rsquo;t hesitate to contact us and we will discuss any of the issues you are going through with our product.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Your Suggestions</h1>
@@ -60,7 +60,7 @@ export default function Terms() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Your Consent</h1>
-                        <p>We've updated our Terms & Conditions to provide you with complete transparency into what is being set when you visit our site and how it's being used. By using our app, registering an account, or making a purchase, you hereby consent to our Terms & Conditions.</p>
+                        <p>We&rsquo;ve updated our Terms & Conditions to provide you with complete transparency into what is being set when you visit our site and how it&rsquo;s being used. By using our app, registering an account, or making a purchase, you hereby consent to our Terms & Conditions.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Links to Other Websites</h1>
@@ -94,7 +94,7 @@ export default function Terms() {
                         <br />
                         <p>You acknowledge and agree that Doorbell shall not be responsible for any Third-Party Services, including their accuracy, completeness, timeliness, validity, copyright compliance, legality, decency, quality or any other aspect thereof. Doorbell does not assume and shall not have any liability or responsibility to you or any other person or entity for any Third-Party Services.</p>
                         <br />
-                        <p>Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties' terms and conditions.</p>
+                        <p>Third-Party Services and links thereto are provided solely as a convenience to you and you access and use them entirely at your own risk and subject to such third parties&rsquo; terms and conditions.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Term and Termination</h1>
@@ -106,7 +106,7 @@ export default function Terms() {
                         <br />
                         <p>Upon termination of this Agreement, you shall cease all use of the app and delete all copies of the app from your computer.</p>
                         <br />
-                        <p>Termination of this Agreement will not limit any of Doorbell's rights or remedies at law or in equity in case of breach by you (during the term of this Agreement) of any of your obligations under the present Agreement.</p>
+                        <p>Termination of this Agreement will not limit any of Doorbell&rsquo;s rights or remedies at law or in equity in case of breach by you (during the term of this Agreement) of any of your obligations under the present Agreement.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Copyright Infringement Notice</h1>
@@ -114,13 +114,13 @@ export default function Terms() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Indemnification</h1>
-                        <p>You agree to indemnify and hold Doorbell and its parents, subsidiaries, affiliates, officers, employees, agents, partners and licensors (if any) harmless from any claim or demand, including reasonable attorneys' fees, due to or arising out of your: (a) use of the app; (b) violation of this Agreement or any law or regulation; or (c) violation of any right of a third party.</p>
+                        <p>You agree to indemnify and hold Doorbell and its parents, subsidiaries, affiliates, officers, employees, agents, partners and licensors (if any) harmless from any claim or demand, including reasonable attorneys&rsquo; fees, due to or arising out of your: (a) use of the app; (b) violation of this Agreement or any law or regulation; or (c) violation of any right of a third party.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">No Warranties</h1>
                         <p>The app is provided to you "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, Doorbell, on its own behalf and on behalf of its affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the app, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, Doorbell provides no warranty or undertaking, and makes no representation of any kind that the app will meet your requirements, achieve any intended results, be compatible or work with any other software, , systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
                         <br />
-                        <p>Without limiting the foregoing, neither Doorbell nor any Doorbell's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the app, or the information, content, and materials or products included thereon; (ii) that the app will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the app; or (iv) that the app, its servers, the content, or e-mails sent from or on behalf of Doorbell are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
+                        <p>Without limiting the foregoing, neither Doorbell nor any Doorbell&rsquo;s provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the app, or the information, content, and materials or products included thereon; (ii) that the app will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the app; or (iv) that the app, its servers, the content, or e-mails sent from or on behalf of Doorbell are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
                         <br />
                         <p>Some jurisdictions do not allow the exclusion of or limitations on implied warranties or the limitations on the applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to you.</p>
                     </div>
@@ -136,17 +136,17 @@ export default function Terms() {
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Severability</h1>
                         <p>If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
                         <br />
-                        <p>This Agreement, together with the Privacy Policy and any other legal notices published by Doorbell on the Services, shall constitute the entire agreement between you and Doorbell concerning the Services. If any provision of this Agreement is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. No waiver of any term of this Agreement shall be deemed a further or continuing waiver of such term or any other term, and Doorbell's failure to assert any right or provision under this Agreement shall not constitute a waiver of such right or provision. YOU AND Doorbell AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO THE SERVICES MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. OTHERWISE, SUCH CAUSE OF ACTION IS PERMANENTLY BARRED.</p>
+                        <p>This Agreement, together with the Privacy Policy and any other legal notices published by Doorbell on the Services, shall constitute the entire agreement between you and Doorbell concerning the Services. If any provision of this Agreement is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. No waiver of any term of this Agreement shall be deemed a further or continuing waiver of such term or any other term, and Doorbell&rsquo;s failure to assert any right or provision under this Agreement shall not constitute a waiver of such right or provision. YOU AND Doorbell AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO THE SERVICES MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. OTHERWISE, SUCH CAUSE OF ACTION IS PERMANENTLY BARRED.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Waiver</h1>
-                        <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Agreement shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute waiver of any subsequent breach.</p>
+                        <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Agreement shall not effect a party&rsquo;s ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute waiver of any subsequent breach.</p>
                         <br />
                         <p>o failure to exercise, and no delay in exercising, on the part of either party, any right or any power under this Agreement shall operate as a waiver of that right or power. Nor shall any single or partial exercise of any right or power under this Agreement preclude further exercise of that or any other right granted herein. In the event of a conflict between this Agreement and any applicable purchase or other terms, the terms of this Agreement shall govern.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Amendments to this Agreement</h1>
-                        <p>Doorbell reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                        <p>Doorbell reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30 days&rsquo; notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
                         <br />
                         <p>By continuing to access or use our app after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use Doorbell.</p>
                     </div>
@@ -154,7 +154,7 @@ export default function Terms() {
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Entire Agreement</h1>
                         <p>The Agreement constitutes the entire agreement between you and Doorbell regarding your use of the app and supersedes all prior and contemporaneous written or oral agreements between you and Doorbell.</p>
                         <br />
-                        <p>You may be subject to additional terms and conditions that apply when you use or purchase other Doorbell's services, which Doorbell will provide to you at the time of such use or purchase.</p>
+                        <p>You may be subject to additional terms and conditions that apply when you use or purchase other Doorbell&rsquo;s services, which Doorbell will provide to you at the time of such use or purchase.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Updates to Our Terms</h1>
@@ -166,7 +166,7 @@ export default function Terms() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Agreement to Arbitrate</h1>
-                        <p>This section applies to any dispute EXCEPT IT DOESN’T INCLUDE A DISPUTE RELATING TO CLAIMS FOR INJUNCTIVE OR EQUITABLE RELIEF REGARDING THE ENFORCEMENT OR VALIDITY OF YOUR OR Doorbell's INTELLECTUAL PROPERTY RIGHTS. The term “dispute” means any dispute, action, or other controversy between you and Doorbell concerning the Services or this agreement, whether in contract, warranty, tort, statute, regulation, ordinance, or any other legal or equitable basis. “Dispute” will be given the broadest possible meaning allowable under law.</p>
+                        <p>This section applies to any dispute EXCEPT IT DOESN’T INCLUDE A DISPUTE RELATING TO CLAIMS FOR INJUNCTIVE OR EQUITABLE RELIEF REGARDING THE ENFORCEMENT OR VALIDITY OF YOUR OR Doorbell&rsquo;s INTELLECTUAL PROPERTY RIGHTS. The term “dispute” means any dispute, action, or other controversy between you and Doorbell concerning the Services or this agreement, whether in contract, warranty, tort, statute, regulation, ordinance, or any other legal or equitable basis. “Dispute” will be given the broadest possible meaning allowable under law.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Notice of Dispute</h1>
@@ -206,7 +206,7 @@ export default function Terms() {
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Contact Us</h1>
-                        <p>Don't hesitate to contact us if you have any questions.</p>
+                        <p>Don&rsquo;t hesitate to contact us if you have any questions.</p>
                         <ul className="mt-4 gap-y-4 flex flex-col ml-8 list-disc">
                             <li>Via Email: <Link href={"mailto:cto@doorbell.mw"}>cto@doorbell.mw</Link></li>
                             <li>Via Phone Number: <Link href={"tel:+265999889000"}>+265 (0) 999 889 000</Link></li>
