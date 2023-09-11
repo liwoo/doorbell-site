@@ -1,14 +1,8 @@
 import Head from "next/head";
 import {Header} from "@/components/Header";
-import {Hero} from "@/components/Hero";
-import {SecondaryFeatures} from "@/components/SecondaryFeatures";
-import {CallToAction} from "@/components/CallToAction";
-import {Reviews} from "@/components/Reviews";
-import Contact from "@/components/Contact";
-import Testimonies from "@/components/Testimonies";
-import Download from "@/components/Download";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
+import { Analytics } from '@vercel/analytics/react';
 
 const image = "https://res.cloudinary.com/tiyeni/image/upload/v1678794284/Doorbell%20Landing.png";
 const content = "Doorbell is the easiest way to order food from your favorite restaurants, delivered right to your door."
@@ -43,6 +37,7 @@ export default function MainLayout({title = "Doorbell - the Zonse Momo App", chi
             <Header/>
             <main>
                 {children}
+                <Analytics />
             </main>
             <Email />
             <Footer/>
