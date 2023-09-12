@@ -15,8 +15,8 @@ function Download() {
                     <Title title="Download the app" />
                     <p>Order anything and have it delivered to your doorstep today</p>
                     <div className="my-8 flex justify-center gap-x-4">
-                        <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} />
-                        <AppStoreLink link={"https://play.google.com/apps/testing/com.doorbell.mw.app"} alt />
+                        <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt />
+                        <AppStoreLink link={"https://play.google.com/apps/testing/com.doorbell.mw.app"} />
                     </div>
                 </div>
             </Container>
