@@ -129,7 +129,7 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
                 <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} />
-                <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt={true} />
+                <AppStoreLink link={"https://play.google.com/apps/testing/com.doorbell.mw.app"} alt={true} />
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
