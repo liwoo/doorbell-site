@@ -1,6 +1,4 @@
-import {useId, useRef, useState} from 'react'
-import clsx from 'clsx'
-import {motion, useInView, useMotionValue} from 'framer-motion'
+import {useId, useState} from 'react'
 
 import {AppScreen} from '@/components/AppScreen'
 import {AppStoreLink} from '@/components/AppStoreLink'
@@ -132,8 +130,8 @@ export function Hero() {
                         <p className="mt-6 text-lg text-gray-100">
                             Get your Food, Groceries and Courier Delivered. We are available for <strong>Public Beta</strong> on <Link className={"underline"}
                             href={"https://support.google.com/android/answer/7680439?hl=en"}>Android Version
-                            10</Link> and <Link href={"https://support.apple.com/en-us/HT201685"} className={"underline"}>iOS Version
-                            13.1</Link> and above.
+                            7</Link> and <Link href={"https://support.apple.com/en-us/HT201685"} className={"underline"}>iOS Version
+                            13.0</Link> and above.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
                             <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt/>
