@@ -1,4 +1,6 @@
 import MainLayout from "@/layouts/MainLayout";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
     const stats = [
@@ -14,10 +16,12 @@ export default function About() {
                     <div
                         className="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2">
                         <div className="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
-                            <img
+                            <Image
                                 className="absolute inset-0 h-full w-full bg-gray-50 object-cover"
                                 src="https://malawiplus.com/wp-content/uploads/2021/08/doorbell2.jpg"
-                                alt=""
+                                alt="Starting with 4 Bikes"
+                                width={1920}
+                                height={1080}
                             />
                         </div>
                     </div>
@@ -44,14 +48,24 @@ export default function About() {
 </span>
                                     </li>
                                     <li className="flex gap-x-3">
-                                        <span>We have set our sights on becoming Malawi’s leading courier service. Stay tuned, as our ambitious expansion plans aim to generate over 1,000 new jobs in the near future.</span>
+                                        <span>The demand for Doorbell Services grew exponentially, and the fleet of motorbikes soon expanded from the initial four to a formidable team of fifteen. With each addition, the company&rsquo;s reach and capacity to serve their customers expanded, allowing them to meet the rising expectations of their loyal clientele.
+</span>
                                     </li>
                                 </ul>
-                                <p className="mt-8">While the digital infrastructure in Malawi poses certain challenges, we view this as an opportunity for growth. We remain optimistic and are committed to setting new industry benchmarks.</p>
-                                <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">The Future and Beyond 🚀</h2>
-                                <p className="mt-6">In the not-so-distant future, Doorbell is poised to become an inseparable part of your daily life, transcending the barriers of mere convenience to establish a new standard of service in Malawi</p>
-                                <p className="mt-6">Here&rsquo;s what&rsquo;s cooking: we&rsquo;re not just planning to expand our fleet; we&rsquo;re talking about revolutionizing the whole game. Picture an ecosystem where you don’t just get your grub and gadgets delivered, but also essential services that reach your doorstep faster than you can say &rsquo;Doorbell.&rsquo; Our promise goes beyond rapid growth</p>
-                                <p className="mt-6">We’re also looking at partnerships that can bring in cutting-edge tech to the delivery business, all to make your life not just easier, but better. So when you think about hitting that &rsquo;Order&rsquo; button, know that you&rsquo;re not just getting a delivery—you&rsquo;re becoming part of a movement that&rsquo;s about to reshape convenience, service, and employment in Malawi.</p>
+                                <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">A Transformative Partnership in 2022</h2>
+                                <p className="mt-6">In 2022, Doorbell Services took a monumental leap forward by welcoming a new partner into the fold. This partner, now our Chief Technology Officer (CTO), joined forces with the founders to bring a new level of innovation to the company. Together, they embarked on an ambitious project that would forever change the landscape of delivery services.
+                                </p>
+                                <p className="mt-6">Under the guidance of this visionary CTO, Doorbell Services has created the <Link className={"text-primary-dark underline"} href={"/#download"}>Zonse Momo App</Link>, the most comprehensive and advanced application in the market today. This groundbreaking app is poised to revolutionize the way customers access and experience our services. With its user-friendly interface, advanced features, and seamless integration, the Zonse Momo App is set to provide a level of convenience and efficiency that was once unimaginable.
+                                </p>
+                                <p className="mt-6">As we stand today, Doorbell Services continues to redefine the delivery industry. With an unwavering commitment to excellence, innovation, and customer satisfaction, the company has become synonymous with trust and reliability.
+                                </p>
+                                <figure className="mt-10 border-l border-indigo-600 pl-9">
+                                    <blockquote className="font-semibold text-gray-900">
+                                        <p>Our journey is far from over. We remain dedicated to pushing the boundaries, expanding our services, and exploring new ways to make your lives easier. From our humble beginnings to our present-day success, one thing has never wavered: our passion for delivering excellence, one doorstep at a time.
+                                        </p>
+                                    </blockquote>
+                                </figure>
+                                <p>Join us on this remarkable journey, as Doorbell Services continues to revolutionize the way you experience convenience and reliability. Thank you for your trust, and we look forward to serving you for many more years to come</p>
                             </div>
                             <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-4">
                                 {stats.map((stat, statIdx) => (
