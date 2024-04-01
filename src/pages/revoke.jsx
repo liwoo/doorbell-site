@@ -42,9 +42,9 @@ export default function Revoke() {
         <p>Certain anonymized data may be retained for analytical purposes.</p>
         <div className="my-4 bg-blue-100 p-3">
           <p>
-            <strong>Why it's important:</strong> Data revocation ensures your
-            right to privacy and control over your personal information. It's
-            part of our commitment to your data security.
+            <strong>Why it&apos;s important:</strong> Data revocation ensures
+            your right to privacy and control over your personal information.
+            It&apos;s part of our commitment to your data security.
           </p>
           <p>
             <strong>Retention Period:</strong> After your request, there is a
