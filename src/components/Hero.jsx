@@ -168,9 +168,9 @@ export function Hero() {
                 iOS Version 13.0
               </Link>{' '}
               and above. */}
-              Starting from <strong>May, 2024</strong>, Doorbell&apos;s App will
-              be available for download on both Android and iOS devices. Our
-              Beta Testing Program is currently oversubscribed. Please keep
+              Starting from <strong>August 7, 2024</strong>, Doorbell&apos;s App
+              will be available for download on both Android and iOS devices.
+              Our Beta Testing Program is currently oversubscribed. Please keep
               checking with us for more details.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
