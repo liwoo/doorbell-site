@@ -2,14 +2,43 @@ import { useState } from 'react'
 import MainLayout from '@/layouts/MainLayout'
 
 export default function Revoke() {
-  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isOtpRequested, setIsOtpRequested] = useState(false)
+  const [isOtpError, setIsOtpError] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     // TODO: Implement the API call to handle data revocation
-    console.log('Data revocation requested for:', email)
-    setIsSubmitted(true)
+    console.log('Data revocation requested for:', phoneNumber)
+    setIsOtpRequested(true)
+  }
+
+  const handleOtpSubmit = async (event) => {
+    event.preventDefault()
+
+    setIsOtpError(true)
+    alert('Invalid OTP. Please try again.')
+  }
+
+  if (isOtpRequested) {
+    return (
+      <div className="mx-auto max-w-lg p-4 text-center">
+        <h2 className="mb-3 text-2xl font-bold">Enter OTP</h2>
+        <p>
+          An OTP has been sent to your phone number. Please enter the OTP to
+          confirm your request.
+        </p>
+        <form onSubmit={handleSubmit} className="mt-4">
+          <input
+            type="text"
+            placeholder="Enter 5 digit OTP Sent to your Number"
+            className="w-full p-2 border border-gray-300 rounded-md"
+          />
+          <button className='rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600'>Submit</button>
+        </form>
+      </div>
+    )
   }
 
   if (isSubmitted) {
@@ -21,6 +50,7 @@ export default function Revoke() {
           received. Our team will process this within the standard retention
           period of 30 days.
         </p>
+        <button className='rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600'>Go Back</button>
       </div>
     )
   }
@@ -30,8 +60,9 @@ export default function Revoke() {
       <div className="mx-auto my-32 max-w-lg p-4">
         <h1 className="mb-4 text-center text-3xl font-bold">Revoke My Data</h1>
         <p className="mb-4">
-          To revoke your data from Doorbell Zatheka, please enter your email
-          address. Revocation means that we will delete your personal data from
+          To revoke your data from Doorbell Zatheka, please enter your Phone
+          Number and we will send you a One Time Pin to verify its indeed you.
+          Revocation means that we will delete your personal data from
           our systems. This includes:
         </p>
         <ul className="mb-4 list-inside list-disc">
@@ -53,15 +84,15 @@ export default function Revoke() {
           </p>
         </div>
         <form onSubmit={handleSubmit} className="mt-6">
-          <label htmlFor="email" className="mb-2 block">
+          <label htmlFor="phoneNumber" className="mb-2 block">
             Email:
           </label>
           <input
-            type="email"
-            id="email"
-            value={email}
+            type="number"
+            id="phoneNumber"
+            value={phoneNumber}
             className="mb-4 w-full rounded-md border border-gray-300 px-3 py-2"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             required
           />
           <button
