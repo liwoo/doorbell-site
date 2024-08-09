@@ -21,7 +21,7 @@ function Download() {
           <p>
             Sorry, our Beta is currently oversubscribed. But you can order
             anything and have it delivered to your through our App, starting{' '}
-            <strong>May 2024</strong>
+            <strong>September 2024</strong>
           </p>
           <div className="my-8 flex justify-center gap-x-4">
             {/* <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt />

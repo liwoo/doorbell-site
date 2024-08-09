@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Contact() {
     return (
-        <div 
+        <div
             id={"list"}
             className="relative bg-white">
             <div className="lg:absolute lg:inset-0 lg:left-1/2">
@@ -12,7 +12,7 @@ export default function Contact() {
                     width={1024}
                     height={768}
                     className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
-                    src="https://images.unsplash.com/photo-1488905971602-47901d26961b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGFmcmljYW4lMjBraXRjaGVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
+                    src="https://res.cloudinary.com/tiyeni/image/upload/v1723219047/owen-bruce-hcET0JIGXoI-unsplash.jpg"
                     alt=""
                 />
             </div>
@@ -21,7 +21,7 @@ export default function Contact() {
                     <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
                         <Title title="List Your Business with Us" center={false} />
                         <p className="mt-2 text-lg leading-8 text-gray-600">Join Doorbell! Get discovered. No worrying
-                            about logistics of getting your product to the your customers!</p>
+                            about logistics of getting your product to your customers!</p>
                         <form action="#" method="POST" className="mt-16">
                             <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
                                 <div>
