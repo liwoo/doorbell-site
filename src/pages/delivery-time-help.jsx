@@ -38,7 +38,7 @@ export default function DeliveryTimeHelp() {
 
   return (
     <MainLayout title="Delivery Time Help | Doorbell">
-      <div className="bg-white px-4 py-8 sm:px-6 sm:py-24 lg:px-8 lg:py-40">
+      <div className="bg-white px-4 sm:px-6 py-24 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
             Understanding Our Delivery Time Slots
@@ -62,7 +62,7 @@ export default function DeliveryTimeHelp() {
           </div>
 
           <p className="mt-8 text-lg text-gray-700">
-            We&apos;re committed to transparency and continuous improvement. If you have any questions about
+            We@re committed to transparency and continuous improvement. If you have any questions about
             our delivery slot system or suggestions for how we can serve you better, please don&apos;t hesitate
             to contact our customer support team. Thank you for choosing Doorbell for your delivery needs!
           </p>
