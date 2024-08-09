@@ -45,9 +45,9 @@ export default function WhySignIn() {
             Why Sign In to Doorbell?
           </h1>
           <p className="mb-8 text-lg text-gray-700">
-            At Doorbell, we're committed to providing you with the best possible food delivery experience.
+            At Doorbell, we&apos;re committed to providing you with the best possible food delivery experience.
             Signing in to your account unlocks a range of benefits that make ordering easier, faster, and more
-            personalized. Here's why creating an account and staying signed in is worth it:
+            personalized. Here&apos;s why creating an account and staying signed in is worth it:
           </p>
 
           {benefits.map((benefit, index) => (
@@ -57,13 +57,13 @@ export default function WhySignIn() {
           <div className="mt-12 bg-gray-50 p-6 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 text-primary-dark">How We Handle Your Data</h2>
             <p className="mb-4 text-gray-700">
-              We understand that your data is important, and we're committed to handling it responsibly and transparently:
+              We understand that your data is important, and we&apos;re committed to handling it responsibly and transparently:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
               <li>Your personal information is encrypted and stored securely.</li>
               <li>We never sell your data to third parties.</li>
               <li>You have full control over your data and can request to view, update, or delete it at any time.</li>
-              <li>We only use your data to improve your experience and provide the services you've requested.</li>
+              <li>We only use your data to improve your experience and provide the services you&apos;ve requested.</li>
               <li>Our data practices comply with all relevant privacy laws and regulations.</li>
             </ul>
             <p className="mt-4 text-gray-700">

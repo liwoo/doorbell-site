@@ -41,14 +41,14 @@ export default function DeliveryHelp() {
           </h1>
           <p className="mb-8 text-lg text-gray-700">
             At Doorbell, we strive to make your delivery experience as smooth and transparent as possible.
-            Here's a step-by-step guide to help you understand our delivery process:
+            Here&apos;s a step-by-step guide to help you understand our delivery process:
           </p>
           {deliverySteps.map((step, index) => (
             <DeliveryStep key={index} {...step} />
           ))}
           <p className="mt-8 text-lg text-gray-700">
             If you have any questions or concerns during any stage of the delivery process,
-            please don't hesitate to contact our customer support team. We're here to help!
+            please don&apos;t hesitate to contact our customer support team. We&apos;re here to help!
           </p>
         </div>
       </div>

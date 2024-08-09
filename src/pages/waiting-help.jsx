@@ -37,11 +37,11 @@ export default function WaitingHelp() {
       <div className="bg-white px-4 py-8 sm:px-6 sm:py-24 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
-            Understanding the 'Waiting for Confirmation' Stage
+            Understanding the &apos;Waiting for Confirmation&apos; Stage
           </h1>
           <p className="mb-8 text-lg text-gray-700">
             At Doorbell, we want to ensure your order is processed smoothly from start to finish.
-            The 'Waiting for Confirmation' stage is an important part of this process. Here's everything
+            The &apos;Waiting for Confirmation&apos; stage is an important part of this process. Here&apos;s everything
             you need to know about this stage:
           </p>
           {infoSections.map((section, index) => (
@@ -50,13 +50,13 @@ export default function WaitingHelp() {
           <div className="mt-8 p-4 bg-blue-50 rounded-lg">
             <p className="text-blue-700">
               Tip: Keep an eye on your phone and our app during this stage. If we need to reach you about your order,
-              we'll send you a notification or give you a call.
+              we&apos;ll send you a notification or give you a call.
             </p>
           </div>
           <p className="mt-8 text-lg text-gray-700">
             If you have any other questions or concerns while waiting for your order confirmation,
-            please don't hesitate to contact our customer support team through the app or website.
-            We're here to help ensure your Doorbell experience is as smooth as possible!
+            please don&apos;t hesitate to contact our customer support team through the app or website.
+            We&apos;re here to help ensure your Doorbell experience is as smooth as possible!
           </p>
         </div>
       </div>
