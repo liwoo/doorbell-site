@@ -17,7 +17,7 @@ export default function Revoke() {
       <div className="mx-auto max-w-lg p-4 text-center">
         <h2 className="mb-3 text-2xl font-bold">Request Received</h2>
         <p>
-          Your request to revoke your data from Doorbell Zonse Momo has been
+          Your request to revoke your data from Doorbell Zatheka has been
           received. Our team will process this within the standard retention
           period of 30 days.
         </p>
@@ -30,7 +30,7 @@ export default function Revoke() {
       <div className="mx-auto my-32 max-w-lg p-4">
         <h1 className="mb-4 text-center text-3xl font-bold">Revoke My Data</h1>
         <p className="mb-4">
-          To revoke your data from Doorbell Zonse Momo, please enter your email
+          To revoke your data from Doorbell Zatheka, please enter your email
           address. Revocation means that we will delete your personal data from
           our systems. This includes:
         </p>

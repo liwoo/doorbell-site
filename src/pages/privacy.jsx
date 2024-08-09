@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Privacy() {
     return (
-        <MainLayout title={"Privacy | Doorbell - Zonse Momo App"}>
+        <MainLayout title={"Privacy | Doorbell - Zatheka App"}>
             <div className="bg-white px-6 py-32 lg:px-8">
                 <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
                     <p className="text-base font-semibold leading-7 text-indigo-600">Updated on 09/09/2023</p>
@@ -110,7 +110,9 @@ export default function Privacy() {
                         <br />
                         <p>We may engage trusted third party service providers to perform functions and provide services to us, such as hosting and maintaining our servers and the app, database storage and management, e-mail management, storage marketing, credit card processing, customer service and fulfilling orders for products and services you may purchase through the app. We will likely share your personal information, and possibly some non-personal information, with these third parties to enable them to perform these services for us and for you.</p>
                         <br />
-                        <p>We may share portions of our log file data, including IP addresses, for analytics purposes with third parties such as web analytics partners, application developers, and ad networks. If your IP address is shared, it may be used to estimate general location and other technographics such as connection speed, whether you have visited the app in a shared location, and type of the device used to visit the app. They may aggregate information about our advertising and what you see on the app and then provide auditing, research and reporting for us and our advertisers.   We may also disclose personal and non-personal information about you to government or law enforcement officials or private parties as we, in our sole discretion, believe necessary or appropriate in order to respond to claims, legal process (including subpoenas), to protect our rights and interests or those of a third party, the safety of the public or any person, to prevent or stop any illegal, unethical, or legally actionable activity, or to otherwise comply with applicable court orders, laws, rules and regulations.</p>
+                        <p>We may share portions of our log file data, including IP addresses, for analytics purposes with third parties such as web analytics partners, application developers, and ad networks. If your IP address is shared, it may be used to estimate general location and other technographics such as connection speed, whether you have visited the app in a shared location, and type of the device used to visit the app. They may aggregate information about our advertising and what you see on the app and then provide auditing, research and reporting for us and our advertisers.
+
+We may also disclose personal and non-personal information about you to government or law enforcement officials or private parties as we, in our sole discretion, believe necessary or appropriate in order to respond to claims, legal process (including subpoenas), to protect our rights and interests or those of a third party, the safety of the public or any person, to prevent or stop any illegal, unethical, or legally actionable activity, or to otherwise comply with applicable court orders, laws, rules and regulations.</p>
                     </div>
                     <div className="mt-10 max-w-2xl">
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Where and when is information collected from customers and end users?</h1>
@@ -220,13 +222,13 @@ export default function Privacy() {
                         <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Tracking Technologies</h1>
                         <ul className="mt-4 gap-y-4 flex flex-col ml-8 list-disc">
                             <li>
-                                <h2>Google Maps API</h2> 
+                                <h2>Google Maps API</h2>
                                 <p>Google Maps API is a robust tool that can be used to create a custom map, a searchable map, check-in functions, display live data synching with location, plan routes, or create a mashup just to name a few.</p>
                                 <p>Google Maps API may collect information from You and from Your Device for security purposes.</p>
                                 <p>Google Maps API collects information that is held in accordance with its Privacy Policy</p>
                             </li>
                             <li>
-                                <h2>Local Storage</h2> 
+                                <h2>Local Storage</h2>
                                 <p>Local Storage sometimes known as DOM storage, provides web apps with methods and protocols for storing client-side data. Web storage supports persistent data storage, similar to cookies but with a greatly enhanced capacity and no information stored in the HTTP request header.</p>
                             </li>
                         </ul>

@@ -42,7 +42,7 @@ const faqs = [
 
 export default function Support() {
     return (
-        <MainLayout title={"Support | Doorbell - Zonse Momo App"}>
+        <MainLayout title={"Support | Doorbell - Zatheka App"}>
             <div className="bg-white">
                 <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
                     <div className="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -68,7 +68,7 @@ export default function Support() {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </MainLayout>
     )
 }

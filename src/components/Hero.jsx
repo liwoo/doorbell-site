@@ -136,7 +136,7 @@ export function Hero() {
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-bold tracking-tight text-gray-100 lg:text-5xl">
               Welcome to the
-              <br /> Zonse Momo App
+              <br /> Zatheka App
             </h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"

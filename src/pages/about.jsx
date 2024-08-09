@@ -10,7 +10,7 @@ export default function About() {
         { label: "Revenue Collected", value: "$346k" },
     ]
     return (
-        <MainLayout title={"About | Doorbell - Zonse Momo App"}>
+        <MainLayout title={"About | Doorbell - Zatheka App"}>
             <div className="relative">
                 <div className="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
                     <div
@@ -37,7 +37,7 @@ export default function About() {
                                         <p>Since our inception in 2019, we&rsquo;ve been dedicated to simplifying daily routines.
                                             Whether it&rsquo;s delivering food, medications, or beverages, we meet approximately
                                             60-65% of all immediate needs through our prompt delivery service.</p>
-                                    </blockquote> 
+                                    </blockquote>
                                 </figure>
                                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
                                     <li className="flex gap-x-3">

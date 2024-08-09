@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Terms() {
     return (
-        <MainLayout title={"Terms | Doorbell - Zonse Momo App"}>
+        <MainLayout title={"Terms | Doorbell - Zatheka App"}>
             <div className="bg-white px-6 py-32 lg:px-8">
                 <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
                     <p className="text-base font-semibold leading-7 text-indigo-600">Updated on 09/09/2023</p>
