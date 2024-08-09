@@ -36,8 +36,8 @@ export default function Revoke() {
             placeholder="Enter 5 digit OTP Sent to your Number"
             className="w-full rounded-md border border-gray-300 p-2"
           />
-          <div className="flex gap-y-4">
-            <button className="rounded-md px-4 py-2 text-white">Submit</button>
+          <div className="flex gap-y-4 my-4">
+            <button className="rounded-md px-4 py-2 text-blue-500 border-blue-500">Submit</button>
             <Link href={'/'} className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
               Or Cancel
             </Link>
