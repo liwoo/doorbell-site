@@ -39,7 +39,7 @@ export default function Revoke() {
           <div className="flex gap-y-4 my-4">
             <button className="rounded-md px-4 py-2 text-blue-500 border-blue-500">Submit</button>
             <Link href={'/'} className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
-              Or Cancel
+              Or Continue Enjoying Convenience with Doorbell
             </Link>
           </div>
         </form>
