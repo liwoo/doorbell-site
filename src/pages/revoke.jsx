@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import MainLayout from '@/layouts/MainLayout'
 
 export default function Revoke() {
@@ -29,13 +30,18 @@ export default function Revoke() {
           An OTP has been sent to your phone number. Please enter the OTP to
           confirm your request.
         </p>
-        <form onSubmit={handleSubmit} className="mt-4">
+        <form onSubmit={handleSubmit} className="my-4">
           <input
             type="text"
             placeholder="Enter 5 digit OTP Sent to your Number"
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full rounded-md border border-gray-300 p-2"
           />
-          <button className='rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600'>Submit</button>
+          <div className="flex gap-y-4">
+            <button className="rounded-md px-4 py-2 text-white">Submit</button>
+            <Link href={'/'} className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+              Or Cancel
+            </Link>
+          </div>
         </form>
       </div>
     )
@@ -50,7 +56,12 @@ export default function Revoke() {
           received. Our team will process this within the standard retention
           period of 30 days.
         </p>
-        <button className='rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600'>Go Back</button>
+        <Link
+          href="/revoke"
+          className="rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600"
+        >
+          Go Back
+        </Link>
       </div>
     )
   }
@@ -62,8 +73,8 @@ export default function Revoke() {
         <p className="mb-4">
           To revoke your data from Doorbell Zatheka, please enter your Phone
           Number and we will send you a One Time Pin to verify its indeed you.
-          Revocation means that we will delete your personal data from
-          our systems. This includes:
+          Revocation means that we will delete your personal data from our
+          systems. This includes:
         </p>
         <ul className="mb-4 list-inside list-disc">
           <li>Account details</li>
@@ -85,7 +96,7 @@ export default function Revoke() {
         </div>
         <form onSubmit={handleSubmit} className="mt-6">
           <label htmlFor="phoneNumber" className="mb-2 block">
-            Email:
+            Phone Number:
           </label>
           <input
             type="number"
