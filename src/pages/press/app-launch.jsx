@@ -148,10 +148,10 @@ export default function PressRelease() {
                     href="mailto:info@doorbell.mw"
                     className="text-indigo-600 hover:text-indigo-500"
                   >
-                    info@doorbell.mw
+                    support@doorbell.mw
                   </a>
                   <br />
-                  Phone: +265 999 123 456
+                  Phone: +265 990 167 497
                   <br />
                   Website:{' '}
                   <Link
