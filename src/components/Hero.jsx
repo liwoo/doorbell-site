@@ -88,7 +88,7 @@ function AppDemo() {
     <AppScreen>
       <AppScreen.Body>
         <h3 className="bg-secondary p-3 text-center underline">
-          Our Response to Cyclone Freddy
+          Enjoy our exclusive Promotions 🎉
         </h3>
         <h4 className="mx-4 mt-6 text-sm">Hi Takondwa</h4>
         <h4 className="mx-4">
@@ -152,41 +152,33 @@ export function Hero() {
               />
             </svg>
             <p className="mt-6 text-lg text-gray-100">
-              {/* Get your Food, Groceries and Courier Delivered. We are available
-              for <strong>Public Beta</strong> on{' '}
+              Get your Food, Groceries and Courier Delivered. We are now &nbsp;
+              <strong>Available Live</strong> on{' '}
               <Link
                 className={'underline'}
                 href={'https://support.google.com/android/answer/7680439?hl=en'}
               >
-                Android Version 7
+                Android
               </Link>{' '}
               and{' '}
               <Link
                 href={'https://support.apple.com/en-us/HT201685'}
                 className={'underline'}
               >
-                iOS Version 13.0
+                iOS
               </Link>{' '}
-              and above. */}
-              Starting from <strong>August 26, 2024</strong>, Doorbell&apos;s App
-              will be available for download on both Android and iOS devices.
-              Our Beta Testing Program is currently oversubscribed. Please keep
-              checking with us for more details.
+              .
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              {/* <AppStoreLink
-                link={'https://testflight.apple.com/join/UyPQsCc6'}
+              <AppStoreLink
+                link={
+                  'https://apps.apple.com/rw/app/doorbell-zatheka/id6446295110'
+                }
                 alt
               />
               <AppStoreLink
                 link={
-                  'https://play.google.com/apps/testing/com.doorbell.mw.app'
-                }
-              /> */}
-              <AppStoreLink
-                whatsapp
-                link={
-                  'https://wa.me/265999889000?text=I%20want%20to%20join%20the%20Doorbell%20App%20Beta%20Program'
+                  'https://play.google.com/store/apps/details?id=com.doorbell.mw.app'
                 }
               />
             </div>

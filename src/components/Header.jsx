@@ -101,11 +101,9 @@ export function Header() {
                             <MobileNavLink href="/#features">
                               Features
                             </MobileNavLink>
-                            <MobileNavLink href="/about">
-                              About
-                            </MobileNavLink>
+                            <MobileNavLink href="/about">About</MobileNavLink>
                             <MobileNavLink href="/#list">
-                              List
+                              Setup Store
                             </MobileNavLink>
                             <MobileNavLink href="/support">FAQs</MobileNavLink>
                           </div>
@@ -120,14 +118,17 @@ export function Header() {
               )}
             </Popover>
             <Button
-                href="/#get-in-touch"
-                variant="outline"
-                className="hidden lg:flex"
+              href="/#get-in-touch"
+              variant="outline"
+              className="hidden lg:flex"
             >
               <span className="ml-2.5 text-gray-100">Get in Touch</span>
             </Button>
-            <Button href="/#download" className="hidden lg:block bg-secondary text-gray-800">
-                Join the Beta
+            <Button
+              href="/#download"
+              className="hidden bg-secondary text-gray-800 lg:block"
+            >
+              Download Now
             </Button>
           </div>
         </Container>
@@ -136,16 +137,15 @@ export function Header() {
   )
 }
 
-
 function PlayIcon(props) {
   return (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-        <circle cx="12" cy="12" r="11.5" stroke="#fff" />
-        <path
-            d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
-            fill="#fff"
-            stroke="#fff"
-        />
-      </svg>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="11.5" stroke="#fff" />
+      <path
+        d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
+        fill="#fff"
+        stroke="#fff"
+      />
+    </svg>
   )
 }

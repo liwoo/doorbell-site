@@ -11,8 +11,8 @@ export function AppStoreLink({
   const src = whatsapp
     ? '/images/whatsapp-order.png'
     : alt
-    ? '/images/beta-ios.png'
-    : '/images/beta-android.png'
+    ? '/images/app-store.png'
+    : '/images/play-store.png'
   return (
     <Link
       href={link}

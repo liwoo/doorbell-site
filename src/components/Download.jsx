@@ -19,18 +19,16 @@ function Download() {
         <div className="my-12 flex w-full flex-col justify-center text-center lg:my-4 lg:w-1/2">
           <Title title="Download the app" />
           <p>
-            Sorry, our Beta is currently oversubscribed. But you can order
-            anything and have it delivered to your through our App, starting{' '}
-            <strong>September 2024</strong>
+            Convenience at your fingertips. Download the Doorbell app and enjoy
+            the best delivery service in Malawi.
           </p>
           <div className="my-8 flex justify-center gap-x-4">
-            {/* <AppStoreLink link={"https://testflight.apple.com/join/UyPQsCc6"} alt />
-                        <AppStoreLink link={"https://play.google.com/apps/testing/com.doorbell.mw.app"} /> */}
             <AppStoreLink
-              whatsapp
-              link={
-                'https://wa.me/265999889000?text=I%20want%20to%20join%20the%20Doorbell%20App%20Beta%20Program'
-              }
+              link={'https://testflight.apple.com/join/UyPQsCc6'}
+              alt
+            />
+            <AppStoreLink
+              link={'https://play.google.com/apps/testing/com.doorbell.mw.app'}
             />
           </div>
         </div>

@@ -5,6 +5,7 @@ const navigation = {
     { name: 'About Us', href: '#' },
     { name: 'FAQs', href: '/support' },
     { name: 'Contact Us', href: '/#get-in-touch' },
+    { name: 'Request Features', href: 'https://doorbell.canny.io/' },
   ],
   follow: [
     { name: 'Facebook', href: '#' },
