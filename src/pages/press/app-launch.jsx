@@ -80,12 +80,12 @@ export default function PressRelease() {
                 <figure className="mt-10 border-l border-indigo-600 pl-9">
                   <blockquote className="font-semibold text-gray-900">
                     <p>
-                      "All the features that people in other major cities in the
-                      world are accustomed to when it comes to food and grocery
-                      deliveries are now coming to Malawians at their
+                      &quot;All the features that people in other major cities
+                      in the world are accustomed to when it comes to food and
+                      grocery deliveries are now coming to Malawians at their
                       fingertips. We boast the widest range of food choices,
                       from local dishes at Bwandilo to breakfast, coffee, and
-                      more."
+                      more.&quot;
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 flex gap-x-4">
@@ -103,17 +103,18 @@ export default function PressRelease() {
                 </h2>
                 <p className="mt-6">
                   In celebration of the launch, Doorbell Services will offer
-                  free delivery for every user's first order - up to the 7th of
-                  September. Use discount code <strong>ZATHEKA100</strong> at
-                  checkout to redeem this offer. This promotion is our way of
-                  welcoming new users and demonstrating the app's convenience.
+                  free delivery for every user&apos;s first order - up to the
+                  7th of September. Use discount code{' '}
+                  <strong>ZATHEKA100</strong> at checkout to redeem this offer.
+                  This promotion is our way of welcoming new users and
+                  demonstrating the app&apos;s convenience.
                 </p>
                 <p className="mt-6">
                   To get started, users only need an active Malawian phone
                   number to log in.
                 </p>
                 <p className="mt-6">
-                  Whether it's connecting customers to local businesses or
+                  Whether it&apos;s connecting customers to local businesses or
                   enhancing digital accessibility, Doorbell continues to lead
                   the way in innovation and growth.
                 </p>

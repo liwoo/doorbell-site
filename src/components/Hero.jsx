@@ -7,6 +7,7 @@ import { PhoneFrame } from '@/components/PhoneFrame'
 import CityPills from '@/components/Cities'
 import { Bag, Chinese, Motorbike } from '@/components/HomeIcons'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -109,7 +110,7 @@ function AppDemo() {
           ))}
         </section>
         <section className="bg-gray-200 p-4">
-          <img src="/images/db-discount.png" alt="advert" />
+          <Image src="/images/db-discount.png" alt="advert" />
         </section>
       </AppScreen.Body>
     </AppScreen>
