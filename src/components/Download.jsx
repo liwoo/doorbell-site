@@ -24,11 +24,15 @@ function Download() {
           </p>
           <div className="my-8 flex justify-center gap-x-4">
             <AppStoreLink
-              link={'https://testflight.apple.com/join/UyPQsCc6'}
+              link={
+                'https://apps.apple.com/mw/app/doorbell-zatheka/id6446295110'
+              }
               alt
             />
             <AppStoreLink
-              link={'https://play.google.com/apps/testing/com.doorbell.mw.app'}
+              link={
+                'https://play.google.com/store/apps/details?id=com.doorbell.mw.app'
+              }
             />
           </div>
         </div>

@@ -172,7 +172,7 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <AppStoreLink
                 link={
-                  'https://apps.apple.com/rw/app/doorbell-zatheka/id6446295110'
+                  'https://apps.apple.com/mw/app/doorbell-zatheka/id6446295110'
                 }
                 alt
               />
