@@ -1,4 +1,5 @@
 import '@/styles/tailwind.css'
+import '@/styles/recaptcha.css' // Add this line
 import 'focus-visible'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 
