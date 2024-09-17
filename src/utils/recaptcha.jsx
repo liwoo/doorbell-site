@@ -17,7 +17,6 @@ export async function verifyToken(token) {
   const responseData = await response.json()
 
   if (response.status < 200 || response.status > 299) {
-    // console.log({ responseData })
     return new Response(JSON.stringify(responseData), {
       status: response.status,
     })
@@ -26,12 +25,10 @@ export async function verifyToken(token) {
   const score = responseData.score
 
   if (!score) {
-    console.error({ message: 'Could not find a Score from Recaptach' })
     return new Response(JSON.stringify(responseData), { status: 403 })
   }
 
   if (score < 0.8) {
-    console.error({ score })
     return new Response(JSON.stringify({ message: 'error' }), { status: 403 })
   } else {
     return new Response(JSON.stringify({ message: 'success' }), { status: 200 })
