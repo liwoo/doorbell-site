@@ -39,6 +39,8 @@ function ContactForm() {
   const [isOverLimit, setIsOverLimit] = useState(false)
   const formRef = useRef()
 
+  const [error, setError] = useState('')
+
   const onVerify = useCallback((token) => {
     setToken(token)
   }, [])
@@ -50,31 +52,45 @@ function ContactForm() {
 
   const clearForm = () => {
     formRef.current?.reset()
+    setPhone('')
+    setDescription('')
   }
 
   const sendMail = async (data, token) => {
-    const response = await fetch('/api/verify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ token }),
-    })
+    try {
+      const response = await fetch('/api/verify-recaptcha', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token }),
+      })
 
-    if (response.status >= 200 && response.status < 300) {
-      try {
-        await fetch('/api/mail', {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const result = await response.json()
+
+      if (result.message === 'Success') {
+        const response = await fetch('/api/mail', {
           method: 'POST',
-          headers: { 'content-type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({ data }),
         })
-      } catch (e) {
-        return new Response(JSON.stringify({ message: e.message }), {
-          status: 500,
-        })
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+
+        return response
+      } else {
+        setError('reCAPTCHA verification failed. Please try again.')
       }
-    } else {
-      console, log('reCaptcha Fail')
+    } catch (error) {
+      setError('An error occurred. Please try again later.')
     }
   }
 
@@ -93,31 +109,19 @@ function ContactForm() {
 
         const formattedData = await formatFormData(data)
 
-        const response = await sendMail(formattedData, token)
+        await sendMail(formattedData, token)
 
-        if (response.status === 200) {
-          // Success logic
-          console.log('Success')
-          // toast({
-          //   variant: 'success',
-          //   title: 'Form Submitted!',
-          //   description:
-          //     "Thank you for getting in touch with me. I'll get back to you in the next 24-48 hours",
-          // });
-          // clearForm();
-        } else {
-          // Failure logic
-          console.log('Something went wrong')
-          // toast({
-          //   variant: 'destructive',
-          //   title: 'Hmmm 🤔',
-          //   description:
-          //     'Something happened while processing your form. Please try again later.',
-          // });
-        }
+        //TODO Show Toast
+        // toast({
+        //   variant: 'success',
+        //   title: 'Form Submitted!',
+        //   description:
+        //     "Thank you for getting in touch with me. I'll get back to you in the next 24-48 hours",
+        // });
+        clearForm()
       }
     } catch (err) {
-      console.log('Error: ', err)
+      //TODO Show Toast
       // toast({
       //   variant: 'destructive',
       //   title: 'Error',
@@ -126,8 +130,8 @@ function ContactForm() {
       // });
     } finally {
       // setFormLoading(false);
-      // setRefreshReCaptcha(true);
-      // clearForm();
+      setRefreshReCaptcha(true)
+      clearForm()
     }
   }
 
@@ -150,6 +154,8 @@ function ContactForm() {
               Join Doorbell! Get discovered. No worrying about logistics of
               getting your product to your customers!
             </p>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
             <GoogleReCaptcha
               onVerify={onVerify}
               refreshReCaptcha={refreshReCaptcha}
