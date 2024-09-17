@@ -2,7 +2,7 @@
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' })
+    return res.status(405).json({ message: 'Not Allowed' })
   }
 
   const { token } = req.body
@@ -23,19 +23,16 @@ export default async function handler(req, res) {
       }),
     })
 
-    const responseData = await response.json()
+    const data = await response.json()
 
-    if (responseData.success && responseData.score >= 0.8) {
-      return res
-        .status(200)
-        .json({ message: 'Success', score: responseData.score })
+    if (data.success && data.score >= 0.8) {
+      return res.status(200).json({ message: 'Success', score: data.score })
     } else {
       return res
         .status(403)
-        .json({ message: 'Recaptcha failed', score: responseData.score })
+        .json({ message: 'Recaptcha failed', score: data.score })
     }
   } catch (error) {
-    console.error('Recaptcha verification failed', error)
     return res.status(500).json({ message: 'Internal Server Error' })
   }
 }
