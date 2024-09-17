@@ -4,6 +4,10 @@ sgMail.setApiKey(process.env.SENDGRID_KEY)
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Not Allowed' })
+  }
+
   const data = req.body.data
 
   const { email, firstName, lastName, phone, company, message } = data
@@ -13,13 +17,12 @@ export default async (req, res) => {
     const msg = {
       to: email,
       from: process.env.VERIFIED_SENDGRID_SENDER,
-      subject: 'List My Business',
+      subject: 'List My Business on Doorbell',
       text: `Name: ${firstName} ${lastName}\nPhone: ${phone}\nCompany: ${company}\nMessage: ${message}`,
       html: html,
     }
 
-    // await sgMail.send(msg)
-    console.log(msg)
+    await sgMail.send(msg)
 
     res.json({ message: `Email has been sent to our inbox!` })
   } catch (error) {
