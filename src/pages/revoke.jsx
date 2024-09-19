@@ -72,6 +72,20 @@ export default function Revoke() {
     )
   }
 
+  const Notice = () => {
+    if (phoneNumber.length > 8) {
+      return (
+        <div className="my-4 rounded-md bg-blue-100 p-3">
+          <p>
+            <strong>Retention Period:</strong> After your request, there is a
+            standard retention period of 30 days during which your data will be
+            processed for deletion.
+          </p>
+        </div>
+      )
+    }
+  }
+
   return (
     <MainLayout title={'Revoke | Doorbell - Zonse Momo App'}>
       <div className="mx-auto my-32 max-w-lg p-4">
@@ -88,16 +102,11 @@ export default function Revoke() {
           <li>Any other identifiable information</li>
         </ul>
         <p>Certain anonymized data may be retained for analytical purposes.</p>
-        <div className="my-4 bg-blue-100 p-3">
+        <div className="-500 my-4 rounded-md border-2 border-yellow-500 bg-yellow-50 p-3">
           <p>
             <strong>Why it&apos;s important:</strong> Data revocation ensures
             your right to privacy and control over your personal information.
             It&apos;s part of our commitment to your data security.
-          </p>
-          <p>
-            <strong>Retention Period:</strong> After your request, there is a
-            standard retention period of 30 days during which your data will be
-            processed for deletion.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="mt-6">
@@ -127,6 +136,7 @@ export default function Revoke() {
             Revoke My Data
           </button>
         </form>
+        <Notice />
       </div>
     </MainLayout>
   )
