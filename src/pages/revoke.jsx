@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import MainLayout from '@/layouts/MainLayout'
+import PhoneInput from 'react-phone-number-input/input'
 
 export default function Revoke() {
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -36,9 +37,14 @@ export default function Revoke() {
             placeholder="Enter 5 digit OTP Sent to your Number"
             className="w-full rounded-md border border-gray-300 p-2"
           />
-          <div className="flex gap-y-4 my-4">
-            <button className="rounded-md px-4 py-2 text-blue-500 border-blue-500">Submit</button>
-            <Link href={'/'} className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+          <div className="my-4 flex justify-between gap-y-4">
+            <button className="rounded-md border-blue-500 px-4 py-2 text-blue-500">
+              Submit
+            </button>
+            <Link
+              href={'/'}
+              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
               Or Continue with Doorbell
             </Link>
           </div>
@@ -98,13 +104,21 @@ export default function Revoke() {
           <label htmlFor="phoneNumber" className="mb-2 block">
             Phone Number:
           </label>
-          <input
-            type="number"
+          <PhoneInput
             id="phoneNumber"
-            value={phoneNumber}
-            className="mb-4 w-full rounded-md border border-gray-300 px-3 py-2"
-            onChange={(e) => setPhoneNumber(e.target.value)}
             required
+            country="MW"
+            name="phone"
+            autoComplete="tel"
+            aria-describedby="phone-description"
+            value={phoneNumber}
+            international={true}
+            withCountryCallingCode={true}
+            defaultCountry={'MW'}
+            onChange={setPhoneNumber}
+            maxLength={17}
+            useNationalFormatForDefaultCountryValue={true}
+            className=" mb-4 block w-full rounded-md border border-gray-300 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
           <button
             type="submit"
