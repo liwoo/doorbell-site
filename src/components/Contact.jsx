@@ -264,7 +264,7 @@ function ContactForm() {
                         htmlFor="message"
                         className="block text-base font-semibold leading-6 text-gray-900"
                       >
-                        Tell us more about your business
+                        Business Information
                       </label>
                     </div>
 
@@ -273,7 +273,7 @@ function ContactForm() {
                         id="message"
                         name="message"
                         onChange={handleDescriptionChange}
-                        placeholder="How can we help you offer more conveniece to your customers?"
+                        placeholder="Tell us more about your business..."
                         value={description}
                         rows={8}
                         maxLength={maxCharacters}
