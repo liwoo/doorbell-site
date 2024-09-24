@@ -32,23 +32,50 @@ function MenuIcon(props) {
 
 function BellIcon(props) {
   return (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="w-6 h-6" viewBox="0 0 32 32"><path fill="#fff" d="M21.5 28.5A1.5 1.5 0 0 1 20 30h-8a1.5 1.5 0 1 1 0-3h8a1.5 1.5 0 0 1 1.5 1.5Zm6.537-4.75A2.488 2.488 0 0 1 25.875 25H6.125a2.513 2.513 0 0 1-2.163-3.762c.713-1.226 1.563-3.563 1.563-7.738V13A10.475 10.475 0 0 1 16 2.5h.075c5.737.038 10.4 4.8 10.4 10.613v.387c0 4.175.85 6.512 1.562 7.738a2.512 2.512 0 0 1 0 2.512ZM25.05 22c-1.288-2.7-1.575-6.063-1.575-8.5v-.387c0-4.175-3.325-7.588-7.413-7.613H16A7.463 7.463 0 0 0 8.525 13v.5c0 2.438-.288 5.8-1.575 8.5h18.1Z"/></svg>
-  ) 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      className="h-6 w-6"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#fff"
+        d="M21.5 28.5A1.5 1.5 0 0 1 20 30h-8a1.5 1.5 0 1 1 0-3h8a1.5 1.5 0 0 1 1.5 1.5Zm6.537-4.75A2.488 2.488 0 0 1 25.875 25H6.125a2.513 2.513 0 0 1-2.163-3.762c.713-1.226 1.563-3.563 1.563-7.738V13A10.475 10.475 0 0 1 16 2.5h.075c5.737.038 10.4 4.8 10.4 10.613v.387c0 4.175.85 6.512 1.562 7.738a2.512 2.512 0 0 1 0 2.512ZM25.05 22c-1.288-2.7-1.575-6.063-1.575-8.5v-.387c0-4.175-3.325-7.588-7.413-7.613H16A7.463 7.463 0 0 0 8.525 13v.5c0 2.438-.288 5.8-1.575 8.5h18.1Z"
+      />
+    </svg>
+  )
 }
 
 function Caret() {
-    return <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="w-4 h-4" viewBox="0 0 20 20"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16.667 7.5 10 14.167 3.333 7.5"/></svg>
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      className="h-4 w-4"
+      viewBox="0 0 20 20"
+    >
+      <path
+        stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M16.667 7.5 10 14.167 3.333 7.5"
+      />
+    </svg>
+  )
 }
 
 export function AppScreen({ children, className, ...props }) {
   return (
     <div className={clsx('flex flex-col', className)} {...props}>
-      <div className="flex justify-between text-white px-4 pt-4">
-          <div className="flex gap-x-4 items-center">
-              <h1 className="rounded-full h-8 w-8 flex items-center justify-center font-semibold border border-2 border-gray-200 bg-primary-dark">TG</h1>
-              <h2>Nancholi, Blantyre</h2>
-              <Caret />
-          </div>
+      <div className="flex justify-between px-4 pt-4 text-white">
+        <div className="flex items-center gap-x-4">
+          <h1 className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 bg-primary-dark font-semibold">
+            TG
+          </h1>
+          <h2>Nancholi, Blantyre</h2>
+          <Caret />
+        </div>
         <BellIcon className="h-4 w-4 flex-none" />
       </div>
       {children}
@@ -85,10 +112,7 @@ AppScreen.Body = forwardRef(function AppScreenBody(
   ref
 ) {
   return (
-    <div
-      ref={ref}
-      className={clsx('mt-6 flex-auto bg-white', className)}
-    >
+    <div ref={ref} className={clsx('mt-6 flex-auto bg-white', className)}>
       {children}
     </div>
   )
