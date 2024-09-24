@@ -19,8 +19,8 @@ function Download() {
         <div className="my-12 flex w-full flex-col justify-center text-center lg:my-4 lg:w-1/2">
           <Title title="Download the app" />
           <p>
-            Convenience at your fingertips. Download the Doorbell app and enjoy
-            the best delivery service in Malawi.
+            Convenience at your fingertips. Download the Doorbell Zatheka app
+            and enjoy the best delivery service in Malawi.
           </p>
           <div className="my-8 flex justify-center gap-x-4">
             <AppStoreLink
