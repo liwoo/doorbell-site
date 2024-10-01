@@ -45,8 +45,8 @@ export default function ChangePhone() {
         </p>
         <div className="my-4 bg-blue-100 p-3">
           <p>
-            <strong>Why it's important:</strong> Keeping your phone number up to
-            date ensures you can access your account and receive important
+            <strong>Why it&apos;s important:</strong> Keeping your phone number
+            up to date ensures you can access your account and receive important
             notifications.
           </p>
           <p>
