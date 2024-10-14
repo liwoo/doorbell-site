@@ -54,7 +54,7 @@ export function RevokeForm() {
 
   const formatDisplay = (value) => {
     if (value.length <= 4) return value
-    return `${value.slice(0, 4)}-${value.slice(4)}`
+    return `${value.slice(0, 4)}-${value.slice(4)}`.toUpperCase()
   }
 
   const clearForm = () => {
