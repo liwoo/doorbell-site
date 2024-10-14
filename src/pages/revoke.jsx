@@ -43,7 +43,7 @@ export function RevokeForm() {
 
   useEffect(() => {
     if (inputRef.current) {
-      const formattedValue = formatDisplay(customerNumber)
+      const formattedValue = formatDisplay(customerNumber).toUpperCase()
       inputRef.current.value = formattedValue
 
       // Move cursor to end of input
@@ -54,7 +54,7 @@ export function RevokeForm() {
 
   const formatDisplay = (value) => {
     if (value.length <= 4) return value
-    return `${value.slice(0, 4)}-${value.slice(4)}`.toUpperCase()
+    return `${value.slice(0, 4)}-${value.slice(4)}`
   }
 
   const clearForm = () => {
