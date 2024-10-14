@@ -47,6 +47,9 @@ importers:
       framer-motion:
         specifier: ^6.5.1
         version: 6.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      iconoir-react:
+        specifier: ^7.9.0
+        version: 7.9.0(react@18.2.0)
       next:
         specifier: 13.0.2
         version: 13.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1157,6 +1160,11 @@ packages:
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+
+  iconoir-react@7.9.0:
+    resolution: {integrity: sha512-6DKkVs7YKxYL3ZCqpoYDD89p/bvuDwPV8JXmrpDGRUafRH6QBMXMAMnQe4rWHLTUIB5UXVVSikvHcpJZjN5/TA==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -3190,6 +3198,10 @@ snapshots:
   hoist-non-react-statics@3.3.2:
     dependencies:
       react-is: 16.13.1
+
+  iconoir-react@7.9.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   ignore@5.3.2: {}
 
