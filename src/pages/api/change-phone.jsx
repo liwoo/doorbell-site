@@ -10,15 +10,15 @@ export default async (req, res) => {
 
   const data = req.body.data
 
-  const { firstName, lastName, phone, company, message } = data
+  const { phone, customer_number } = data
   try {
-    const html = `${firstName} ${lastName} <br> Phone: ${phone} <br> Company: ${company} <br> Message: ${message}`
+    const html = `Phone: ${phone} <br> Customer Number: ${customer_number}`
 
     const msg = {
       to: process.env.TO_EMAIL,
       from: process.env.VERIFIED_SENDGRID_SENDER,
-      subject: 'List My Business on Doorbell',
-      text: `Name: ${firstName} ${lastName}\nPhone: ${phone}\nCompany: ${company}\nMessage: ${message}`,
+      subject: 'Change My Doorbell Account Phone Number',
+      text: `Phone: ${phone}\nCustomer Number: ${customer_number}`,
       html: html,
     }
 

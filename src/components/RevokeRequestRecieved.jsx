@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export function RequestReceivedMessage({ onGoBack }) {
+export function RevokeRequestReceivedMessage({ onGoBack }) {
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center bg-gray-200 bg-opacity-10 backdrop-blur-md"
@@ -16,7 +16,7 @@ export function RequestReceivedMessage({ onGoBack }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-      ></motion.div>
+      />
 
       {/* Content */}
       <motion.div
