@@ -82,7 +82,7 @@ function AppDemo() {
   const services = [
     { name: 'Food', icon: <Chinese /> },
     { name: 'Groceries', icon: <Bag /> },
-    { name: 'Courier', icon: <Motorbike /> },
+    { name: 'Errands', icon: <Motorbike /> },
   ]
   return (
     <AppScreen>
