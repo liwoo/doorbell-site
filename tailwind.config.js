@@ -37,7 +37,8 @@ module.exports = {
         gray: colors.neutral,
         primary: {
           DEFAULT: "#2E5BFF",
-          dark: "#1F3EB1"
+          dark: "#1F3EB1",
+          light: "#5378FF"
         },
         secondary: "#FFE45C",
         accent: "#FAF9E7"
