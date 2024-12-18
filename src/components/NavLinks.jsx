@@ -8,7 +8,7 @@ export function NavLinks() {
   return [
     ['About', '/about'],
     ['Setup Your Store', '/#list'],
-    ['Features', '/#reviews'],
+    ['Features', '/features'],
   ].map(([label, href], index) => (
     <Link
       scroll={true}
