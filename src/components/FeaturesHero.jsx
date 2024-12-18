@@ -116,7 +116,7 @@ function AppDemo() {
   )
 }
 
-export function Hero() {
+export function FeaturesHero() {
   return (
     <div className="overflow-hidden bg-primary py-20 sm:py-32 lg:pb-16 xl:pb-20">
       <svg
@@ -135,8 +135,8 @@ export function Hero() {
         <div className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-12">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-bold tracking-tight text-gray-100 lg:text-5xl">
-              Welcome to the
-              <br /> Zatheka App
+              Convenience is choosing whether to buy things
+              <br /> now or later.
             </h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -152,36 +152,9 @@ export function Hero() {
               />
             </svg>
             <p className="mt-6 text-lg text-gray-100">
-              Get your Food, Groceries and Courier Delivered. We are now &nbsp;
-              <strong>Available Live</strong> on{' '}
-              <Link
-                className={'underline'}
-                href={'https://support.google.com/android/answer/7680439?hl=en'}
-              >
-                Android
-              </Link>{' '}
-              and{' '}
-              <Link
-                href={'https://support.apple.com/en-us/HT201685'}
-                className={'underline'}
-              >
-                iOS
-              </Link>{' '}
-              .
+              Whether your shopping for Groceries or sending a gift to someone
+              special, our app is convenience in your pocket.
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <AppStoreLink
-                link={
-                  'https://apps.apple.com/mw/app/doorbell-zatheka/id6446295110'
-                }
-                alt
-              />
-              <AppStoreLink
-                link={
-                  'https://play.google.com/store/apps/details?id=com.doorbell.mw.app'
-                }
-              />
-            </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
@@ -190,12 +163,6 @@ export function Hero() {
                 <AppDemo />
               </PhoneFrame>
             </div>
-          </div>
-          <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-            <p className="text-center text-sm font-semibold text-gray-100 lg:text-left">
-              *Available in the following Cities
-            </p>
-            <CityPills />
           </div>
         </div>
       </Container>
