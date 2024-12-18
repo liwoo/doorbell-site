@@ -6,39 +6,53 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    // title: 'Easy payments',
     body: 'Doorbell makes it easy to pay for your order. We accept all major credit cards and debit cards.',
-    image: '/images/icons/payment.png',
+    image: '/images/3d/pay.png',
     variant: 'secondary'
   },
   {
-    title: 'Find your favorite restaurant',
-    body: 'Doorbell is the easiest way to order food from your favorite restaurants, delivered right to your door.',
-    image: '/images/3d/restaurant.png',
+    body: 'Errands is Doorbell’s on-demand delivery service. Get anything delivered in under an hour.',
+    image: '/images/3d/courier.png',
     variant: 'primary'
   },
   {
-    title: 'Shop groceries, retail and much more',
-    body: 'From groceries to retail, Doorbell has you covered. Shop from your favorite stores and get your items delivered right to your door.',
-    image: '/images/3d/shop.png',
-    variant: 'secondary'
+    body: 'Plan your meals, with our estimated prep time, so that you never miss your snack time.',
+    image: '/images/features/plan-meals.png',
+    variant: 'primary'
   },
   {
-    title: 'Track in real-time',
-    body: 'Track your delivery in real time. We &nbsp; ll let you know when your order is on its way and when it&nbsp;s been delivered.',
-    image: '/images/icons/tracking.png',
+    body: 'Find and order food from your favourite restaurants, delivered right to your door.',
+    image: '/images/3d/restaurant.png',
     variant: 'alternative'
   },
   {
-    title: 'Schedule your delivery',
-    body: 'Schedule your delivery for a time that works best for you. We&nbsp;ll make sure your order is delivered right to your door.',
+    body: 'Errands Allow you to plan out your delivery, make stops and fulfil each task in the order you want. get specific with line items too.',
+    image: '/images/features/errands.png',
+    variant: 'secondary'
+  },
+  {
+    body: 'Schedule your delivery for a time that works best for you. We’ll make sure your order is delivered right to your door.',
     image: '/images/3d/delivery.png',
+    variant: 'secondary'
+  },
+  {
+    body: 'Discount codes, make things way more interesting, find and share them to make the doorbell experience special.',
+    image: '/images/features/discounts.png',
     variant: 'primary'
   },
   {
-    title: 'Multiple stops',
-    body: 'Plan out your delivery, make stops and fulfill each task in the order you want, get specific with line items too.',
-    image: '/images/icons/stops.png',
+    body: 'Your cart is your way to of expressing yourself, pick and choose as you please we understand convenience.',
+    image: '/images/features/your-cart.png',
+    variant: 'primary'
+  },
+  {
+    body: 'Track your delivery in realtime. We’ll let you know when your order is on its way and when it’s been delivered.',
+    image: '/images/3d/mobile.png',
+    variant: 'primary'
+  },
+  {
+    body: 'Groceries right at your finger tips. Shop from your favourite stores, from the comfort of your home.',
+    image: '/images/3d/shop.png',
     variant: 'alternative'
   },
 ]
@@ -79,7 +93,7 @@ function Feature({
           {/*<p*/}
           {/*  className={clsx(*/}
           {/*    'mt-4 text-lg font-semibold leading-6',*/}
-          {/*    variant === 'secondary' ? 'text-white' : 'text-gray-900'*/}
+          {/*     variant === 'secondary' || variant === 'alternative' ? 'text-white' : 'text-gray-900'*/}
           {/*  )}*/}
           {/*>*/}
           {/*  {title}*/}
@@ -87,7 +101,7 @@ function Feature({
           <p
             className={clsx(
               'mb-3 leading-7 font-semibold text-2xl',
-              variant === 'secondary' ? 'text-white/90' : 'text-gray-600'
+              variant === 'secondary' || variant === 'alternative' ? 'text-white/90' : 'text-gray-600'
             )}
           >
             {body}
@@ -161,21 +175,21 @@ function FeatureColumn({
 function FeatureGrid() {
   let containerRef = useRef()
   let isInView = useInView(containerRef, { once: true, amount: 0.9 })
-  let columns = splitArray(features, 3)
-  columns = [columns[0], columns[1], splitArray(columns[2], 2)]
+  let columns = splitArray(features, 2)
+  columns = [columns[0], columns[1]]
 
   return (
       <div
           ref={containerRef}
-          className="relative mt-16 grid h-[49rem] max-h-[150vh] grid-cols-1 items-start overflow-hidden px-4 sm:mt-20 md:grid-cols-2 lg:grid-cols-2"
+          className="relative mt-8 overflow-hidden "
       >
         {isInView && (
-            <>
+            <div className="grid h-[49rem] max-h-[150vh] grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:mt-10 justify-items-center gap-0 px-48">
               <FeatureColumn
-                  features={[...columns[0], ...columns[2].flat(), ...columns[1]]}
+                  features={columns[0]}
                   featureClassName={(featureIndex) =>
                       clsx(
-                          featureIndex >= columns[0].length + columns[2][0].length &&
+                          featureIndex >= columns[0].length + columns[1].length &&
                           'md:hidden',
                           featureIndex >= columns[0].length && 'lg:hidden'
                       )
@@ -183,14 +197,14 @@ function FeatureGrid() {
                   msPerPixel={10}
               />
               <FeatureColumn
-                  features={[...columns[1], ...columns[2][1]]}
+                  features={columns[1]}
                   className="hidden md:block"
                   featureClassName={(featureIndex) =>
                       featureIndex >= columns[1].length && 'lg:hidden'
                   }
-                  msPerPixel={10}
+                  msPerPixel={15}
               />
-            </>
+            </div>
         )}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50" />
