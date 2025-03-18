@@ -2,7 +2,7 @@ import Link from 'next/link'
 import MainLayout from '@/layouts/MainLayout'
 import formatFormData from '@/utils/formatFormData'
 import React, { useEffect, useRef, useState } from 'react'
-import PhoneInput from 'react-phone-number-input/input'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input'
 ;('use client')
 import {
   GoogleReCaptcha,
@@ -12,7 +12,7 @@ import {
 import ToastContainer from '@/components/toast/toastContainer'
 import { useToast } from '@/components/toast/use-toast'
 import { IconoirProvider, InfoCircle } from 'iconoir-react'
-import { RequestReceivedMessage } from '@/components/RequestRecieved'
+import { RevokeRequestReceivedMessage } from '@/components/RevokeRequestRecieved'
 
 export default function Revoke() {
   return (
@@ -61,6 +61,7 @@ export function RevokeForm() {
     formRef.current?.reset()
     setPhone('')
     setCustomerNumber('')
+    setError('')
   }
 
   const sendMail = async (data, token) => {
@@ -95,6 +96,7 @@ export function RevokeForm() {
         setIsSubmitted(true)
 
         return response
+        // biome-ignore lint/style/noUselessElse: <explanation>
       } else {
         setError('reCAPTCHA verification failed. Please try again.')
       }
@@ -107,6 +109,13 @@ export function RevokeForm() {
     e.preventDefault()
     setFormLoading(true)
     const formData = new FormData(formRef.current)
+
+    // Validate phone number
+    if (!phone || !isValidPhoneNumber(phone)) {
+      setError('Please enter a valid phone number')
+      setFormLoading(false)
+      return
+    }
 
     try {
       const token = await executeRecaptcha('revoke')
@@ -147,131 +156,148 @@ export function RevokeForm() {
   }
 
   if (isSubmitted) {
-    return <RequestReceivedMessage onGoBack={handleGoBack} />
+    return <RevokeRequestReceivedMessage onGoBack={handleGoBack} />
   }
 
   return (
-    <IconoirProvider
-      iconProps={{
-        color: '#5e5e5e',
-        strokeWidth: 2,
-        width: '1em',
-        height: '1em',
-      }}
-    >
-      <MainLayout title={'Revoke | Doorbell - Zonse Momo App'}>
-        <div className="relative mx-auto my-32 max-w-lg select-none p-4">
-          {formLoading && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75">
-              <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-            </div>
-          )}
-          <h1 className="mb-4 text-center text-3xl font-bold">
-            Revoke My Data
-          </h1>
-          <p className="mb-4">
-            To revoke your data from Doorbell Zatheka, please enter your Phone
-            Number and we will send you a One Time Pin to verify its indeed you.
-            Revocation means that we will delete your personal data from our
-            systems. This includes:
-          </p>
-          <ul className="mb-4 list-inside list-disc">
-            <li>Account details</li>
-            <li>Order history</li>
-            <li>Any other identifiable information</li>
-          </ul>
-          <p>
-            Certain anonymized data may be retained for analytical purposes.
-          </p>
-          <div className="my-4 rounded-lg bg-blue-100 p-3">
-            <p>
-              <strong>Why it&apos;s important:</strong> Data revocation ensures
-              your right to privacy and control over your personal information.
-              It&apos;s part of our commitment to your data security.
-            </p>
-            <br></br>
-            <p>
-              <strong>Retention Period:</strong> After your request, there is a
-              standard retention period of 30 days during which your data will
-              be processed for deletion.
-            </p>
-          </div>
-          <GoogleReCaptcha refreshReCaptcha={refreshReCaptcha} />
-          <form onSubmit={handleSubmit} ref={formRef} className="mt-6">
-            <div className="my-6 sm:col-span-2">
-              <div className="flex justify-between text-sm leading-6">
-                <label
-                  htmlFor="customer_number"
-                  className="block text-base font-semibold text-gray-900"
-                >
-                  Customer Number
-                </label>
+    <>
+      <IconoirProvider
+        iconProps={{
+          color: '#5e5e5e',
+          strokeWidth: 2,
+          width: '1em',
+          height: '1em',
+        }}
+      >
+        <MainLayout title={'Revoke | Doorbell - Zonse Momo App'}>
+          <div className="relative mx-auto my-32 max-w-lg select-none p-4">
+            {formLoading && (
+              <div className="absolute inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75">
+                <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
               </div>
-              <div className="relative my-2.5">
-                <input
-                  ref={inputRef}
-                  id="customer_number"
-                  type="text"
-                  maxLength={9} // Increased to allow for dash
-                  name="customer_number"
-                  onChange={handleInputChange}
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  required
-                />
-              </div>
-              <div>
-                <div className="flex items-center justify-start gap-2 text-sm leading-6 text-gray-400">
-                  <InfoCircle />
-                  <p id="customer-number-description">
-                    This number can be found in account security
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <div className="flex justify-between text-sm leading-6">
-                <label
-                  htmlFor="phone"
-                  className="block text-base font-semibold text-gray-900"
-                >
-                  Phone
-                </label>
-              </div>
-              <div className="my-2.5">
-                <PhoneInput
-                  id="phone"
-                  country="MW"
-                  name="phone"
-                  autoComplete="tel"
-                  aria-describedby="phone-description"
-                  value={phone}
-                  international={true}
-                  withCountryCallingCode={true}
-                  defaultCountry={'MW'}
-                  onChange={setPhone}
-                  maxLength={17}
-                  useNationalFormatForDefaultCountryValue={true}
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-                <div className="flex items-center justify-start gap-2 text-sm leading-6">
-                  <InfoCircle></InfoCircle>
-                  <p id="phone-description" className="text-gray-400">
-                    Use a valid phone number
-                  </p>
-                </div>
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="mt-6 w-full rounded-md bg-blue-500 py-4 text-white hover:bg-blue-600"
-            >
+            )}
+            <h1 className="mb-4 text-center text-3xl font-bold">
               Revoke My Data
-            </button>
-          </form>
-        </div>
+            </h1>
+            <p className="mb-4">
+              To revoke your data from Doorbell Zatheka, please enter your
+              current phone number and customer ID. We will get in touch with
+              you to verify your identity and process the change. Revocation
+              means that we will delete your personal data from our systems.
+              This includes:
+            </p>
+            <ul className="mb-4 list-inside list-disc">
+              <li>Account details</li>
+              <li>Order history</li>
+              <li>Any other identifiable information</li>
+            </ul>
+            <p>
+              Certain anonymized data may be retained for analytical purposes.
+            </p>
+            <div className="my-4 rounded-lg bg-blue-100 p-3">
+              <p>
+                <strong>Why it&apos;s important:</strong> Data revocation
+                ensures your right to privacy and control over your personal
+                information. It&apos;s part of our commitment to your data
+                security.
+              </p>
+              <br />
+              <p>
+                <strong>Retention Period:</strong> After your request, there is
+                a standard retention period of 30 days during which your data
+                will be processed for deletion.
+              </p>
+            </div>
+            <GoogleReCaptcha refreshReCaptcha={refreshReCaptcha} />
+            <form
+              onSubmit={handleSubmit}
+              ref={formRef}
+              className={`mt-6 select-none  space-y-4 transition-all duration-300 ${
+                formLoading ? 'pointer-events-none blur-sm' : ''
+              }`}
+            >
+              <div className="my-6 sm:col-span-2">
+                <div className="flex justify-between text-sm leading-6">
+                  <label
+                    htmlFor="customer_number"
+                    className="block text-base font-semibold text-gray-900"
+                  >
+                    Customer ID:
+                  </label>
+                </div>
+                <div className="relative my-2.5">
+                  <input
+                    ref={inputRef}
+                    id="customer_number"
+                    type="text"
+                    maxLength={9} // Increased to allow for dash
+                    name="customer_number"
+                    onChange={handleInputChange}
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    required
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center justify-start gap-2 text-sm leading-6 text-gray-400">
+                    <InfoCircle />
+                    <p id="customer-number-description">
+                      This number can be found in account security
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <div className="flex justify-between text-sm leading-6">
+                  <label
+                    htmlFor="phone"
+                    className="block text-base font-semibold text-gray-900"
+                  >
+                    Current Phone Number:
+                  </label>
+                  <div className="flex items-center justify-start gap-2 text-sm leading-6">
+                    <InfoCircle />
+                    <p id="phone-description" className="text-gray-400">
+                      Use a valid phone number
+                    </p>
+                  </div>
+                </div>
+                <div className="my-2.5">
+                  <PhoneInput
+                    id="phone"
+                    country="MW"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    aria-describedby="phone-description"
+                    value={phone}
+                    international={true}
+                    withCountryCallingCode={true}
+                    defaultCountry={'MW'}
+                    onChange={setPhone}
+                    maxLength={17}
+                    useNationalFormatForDefaultCountryValue={true}
+                    required
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                  <p className="my-2 h-3">
+                    {error && (
+                      <p className="mt-2 text-sm text-red-600">{error}</p>
+                    )}
+                  </p>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="mt-6 w-full rounded-md bg-blue-500 py-4 text-white hover:bg-blue-600"
+              >
+                Revoke My Data
+              </button>
+            </form>
+          </div>
 
-        <ToastContainer />
-      </MainLayout>
-    </IconoirProvider>
+          <ToastContainer />
+        </MainLayout>
+      </IconoirProvider>
+    </>
   )
 }
