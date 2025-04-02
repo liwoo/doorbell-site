@@ -1,0 +1,345 @@
+import React from 'react';
+import MainLayout from '@/layouts/MainLayout';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const FeatureCard = ({ title, subtitle, features }) => (
+  <div className="rounded-lg border border-gray-200 bg-white p-6 h-fit">
+    <h3 className="mb-4 text-xl font-semibold text-primary-dark">{title}</h3>
+    <p className="mb-4 text-base font-base">{subtitle}</p>
+    <ul className="space-y-2">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-start">
+          <svg
+            className="mr-2 mt-0.5 h-5 w-5 min-w-5 min-h-5 text-primary-dark"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <span className="text-gray-700">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)
+
+export default function Business() {
+    
+  return (
+    <MainLayout title="Premium Errand Services for Elite Organizations | Doorbell">
+      <div className="relative">
+        <div className="mx-auto max-w-5xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
+          <div className="px-6 lg:contents">
+            <div className="mx-auto pb-24 pt-48">
+              <p className="text-base font-semibold leading-7 text-indigo-600">
+                DOORBELL FOR BUSINESS
+              </p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Premium Errand Services for Elite Organizations
+              </h1>
+              <Image
+                src="https://res.cloudinary.com/tiyeni/image/upload/v1724606681/Screenshot_2024-08-25_at_7.24.22_PM.png"
+                alt="Doorbell Services Team"
+                width={800}
+                height={533}
+                className="mt-10 w-full"
+              />
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+                Welcome To A New Era Of Business Efficiency
+              </h2>
+              <p className="mt-6 text-xl leading-8 text-gray-700">
+                At DoorBell for Business, we understand that your
+                organization&apos;s most valuable resource is time. Our premium
+                subscription-based errand service empowers high-performing
+                businesses to delegate routine tasks and logistics, allowing
+                your team to focus on what truly matters: driving growth and
+                innovation.
+              </p>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+                The Doorbell Advantage
+              </h2>
+              <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 lg:max-w-none">
+                <ul role="list" className="mt-8 space-y-8 text-gray-600">
+                  <li className="flex gap-x-3">
+                    <span>
+                      Exclusive Business Focus: Unlike consumer errand services,
+                      our entire operation is designed specifically for
+                      corporate needs and professional environments.
+                    </span>
+                  </li>
+                  <li className="flex gap-x-3">
+                    <span>
+                      Guaranteed Reliability: 99.7% on-time completion rate with
+                      proactive communication at every step.
+                    </span>
+                  </li>
+                  <li className="flex gap-x-3">
+                    <span>
+                      Enterprise-Grade Security: Full insurance coverage,
+                      background-checked specialists, and secure handling
+                      protocols.
+                    </span>
+                  </li>
+                  <li className="flex gap-x-3">
+                    <span>
+                      Seamless Integration: Our service works alongside your
+                      existing operations without disruption or additional
+                      management overhead.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <p className="mt-16 font-semibold leading-7 tracking-tight text-indigo-600">
+                Subscription Tiers Tailored To Your Needs
+              </p>
+              <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900">
+                Choose the plan that aligns with your organization&apos;s
+                requirements:
+              </h2>
+              {/* Plans Section */}
+              <div className="bg-gray-50">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                  <div className="text-center"></div>
+
+                  <div className="mt-12 grid gap-8 lg:grid-cols-2 xl:grid-cols-4">
+                    <FeatureCard
+                      title="LIGHT PLAN"
+                      subtitle="Maximum 5 rides per day"
+                      features={[
+                        'Up to 10 deliveries per month',
+                        'Standard delivery times',
+                        'Basic reporting',
+                        'Email support',
+                      ]}
+                    />
+                    <FeatureCard
+                      title="MEDIUM PLAN"
+                      features={[
+                        'Up to 50 deliveries per month',
+                        'Priority delivery times',
+                        'Advanced reporting',
+                        'Email and phone support',
+                        'Dedicated account manager',
+                      ]}
+                    />
+                    <FeatureCard
+                      title="FULL PLAN"
+                      features={[
+                        'Up to 200 deliveries per month',
+                        'Express delivery options',
+                        'Comprehensive reporting',
+                        '24/7 priority support',
+                        'Dedicated account team',
+                        'Custom integration options',
+                      ]}
+                    />
+                    <FeatureCard
+                      title="ENTERPRISE PLAN"
+                      features={[
+                        'Unlimited deliveries',
+                        'Guaranteed SLAs',
+                        'Real-time tracking and analytics',
+                        'White-glove service',
+                        'Custom solutions',
+                        'API access for seamless integration',
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
+              <p className="text-base font-semibold leading-7 text-indigo-600">
+                WHAT OUR CLIENTS SAY
+              </p>
+              <figure className="mt-4 border-l border-indigo-600 pl-9">
+                <blockquote className="font-semibold text-gray-900">
+                  <p>
+                    DoorBell for Business has become an invaluable extension of
+                    our team. The service pays for itself in recovered
+                    productivity alone.
+                  </p>
+                </blockquote>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Welcome Section */}
+      <div className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Welcome To A New Era Of Business Efficiency
+            </h2>
+            <p className="mt-4 text-lg text-gray-500">
+              At Doorbell, we understand that time is your most valuable asset.
+              We&apos;ve created a specialized service designed to help your
+              business achieve greater efficiency and productivity by
+              outsourcing routine tasks and errands to our reliable team of
+              professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Hero Section
+      <div className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-base font-semibold uppercase tracking-wide text-primary-dark">
+              Business Solutions
+            </p>
+            <h1 className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+              Premium Errand Services for Elite Organizations
+            </h1>
+          </div>
+
+          Hero Image
+          <div className="mt-12 flex justify-center">
+            <Image
+              src="https://res.cloudinary.com/tiyeni/image/upload/v1724606681/Screenshot_2024-08-25_at_7.24.22_PM.png"
+              alt="Doorbell business delivery service"
+              className="max-h-96 rounded-lg object-contain shadow-xl"
+              fill
+              onError={(e) => {
+                e.target.onerror = null
+                e.target.src = '/images/restaurant-screenshot.png'
+              }}
+            />
+          </div>
+        </div>
+      </div> */}
+
+      {/* Advantages Section
+      <div className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base font-semibold uppercase tracking-wide text-primary-dark">
+              The Doorbell Advantage
+            </h2>
+          </div>
+
+          <div className="mt-10">
+            <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                    Enhanced Business Agility
+                  </p>
+                </dt>
+                <dd className="ml-16 mt-2 text-base text-gray-500">
+                  Our on-demand services let you respond to emerging needs
+                  quickly, so you can stay competitive in today&apos;s
+                  fast-paced business environment.
+                </dd>
+              </div>
+
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                    Cost Reduction
+                  </p>
+                </dt>
+                <dd className="ml-16 mt-2 text-base text-gray-500">
+                  Eliminate the need for full-time staff dedicated to errands
+                  and routine tasks, while maintaining productivity and
+                  operational efficiency.
+                </dd>
+              </div>
+
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                    Enterprise-Grade Reliability
+                  </p>
+                </dt>
+                <dd className="ml-16 mt-2 text-base text-gray-500">
+                  Our dedicated team undergoes rigorous training to ensure your
+                  business needs are handled with the utmost professionalism and
+                  attention to detail.
+                </dd>
+              </div>
+
+              <div className="relative">
+                <dt>
+                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
+                    Seamless Integration
+                  </p>
+                </dt>
+                <dd className="ml-16 mt-2 text-base text-gray-500">
+                  Our services easily integrate with your existing operations
+                  and software systems for a cohesive business workflow.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div> */}
+    </MainLayout>
+  )
+}
