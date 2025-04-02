@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import Image from 'next/image';
 import Head from 'next/head'
 import { CheckIcon } from '@radix-ui/react-icons';
-import BusinessLogos from '@/components/BusinessLogos';
+import OurClients from '@/components/OurClients';
 
 const pricingTiers = [
   {
@@ -266,12 +266,7 @@ export default function Business() {
           </div>
         </div>
         <div className="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-base font-semibold uppercase tracking-wide text-primary-dark">
-              CLIENTS WHO CHOOSE DOORBELL EVERYDAY
-            </p>
-                  </div>
-                  <BusinessLogos/>
+          {/* TODO: Implement <OurClients />  */}
         </div>
       </div>
 
