@@ -121,9 +121,9 @@ function PricingTier({
   return (
     <div
       className={clsx(
-        'rounded-lg bg-white p-6',
+        'rounded-lg bg-white p-6 w-96',
         featured
-          ? 'border-2 border-blue-500 shadow-lg'
+          ? 'border-2 border-primary shadow-lg'
           : 'border border-gray-200'
       )}
     >
@@ -132,10 +132,10 @@ function PricingTier({
 
       <button
         className={clsx(
-          'mt-6 w-full rounded-md px-4 py-2 text-center text-sm font-medium',
+          'mt-6 w-full rounded-md px-4 py-2 text-center text-sm font-bold',
           featured
-            ? 'bg-blue-600 text-white hover:bg-blue-700'
-            : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
+            ? 'bg-primary text-white hover:bg-blue-700'
+            : 'text-primary hover:bg-blue-50 font-bold'
         )}
       >
         {button.label}
@@ -144,7 +144,7 @@ function PricingTier({
       <ul className="mt-8 space-y-4">
         {features.map((feature, index) => (
           <li key={index} className="flex">
-            <CheckIcon className="h-6 w-6 flex-none text-blue-500" />
+            <CheckIcon className="h-6 w-6 flex-none text-black" />
             <div className="ml-3">
               <p className="text-sm text-gray-600">{feature.text}</p>
               {feature.note && (
@@ -242,7 +242,7 @@ export default function Business() {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                   <div className="text-center"></div>
 
-                  <div className="mt-12 grid gap-8 lg:grid-cols-2 xl:grid-cols-4">
+                  <div className="mt-12 grid gap-8 lg:grid-cols-2 xl:grid-cols-2 justify-items-center mx-auto">                    
                     {pricingTiers.map((tier) => (
                       <PricingTier key={tier.name} {...tier} />
                     ))}
