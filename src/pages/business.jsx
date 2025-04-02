@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import Image from 'next/image';
 import Head from 'next/head'
 import { CheckIcon } from '@radix-ui/react-icons';
+import BusinessLogos from '@/components/BusinessLogos';
 
 const pricingTiers = [
   {
@@ -121,9 +122,9 @@ function PricingTier({
   return (
     <div
       className={clsx(
-        'rounded-lg bg-white p-6 w-96',
+        'rounded-xl bg-white p-6 w-96',
         featured
-          ? 'border-2 border-primary shadow-lg'
+          ? 'border-2 border-primary shadow-xl'
           : 'border border-gray-200'
       )}
     >
@@ -203,29 +204,31 @@ export default function Business() {
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
                   <li className="flex gap-x-3">
                     <span>
-                      Exclusive Business Focus: Unlike consumer errand services,
-                      our entire operation is designed specifically for
-                      corporate needs and professional environments.
+                      <strong>• Exclusive Business Focus:</strong> Unlike
+                      consumer errand services, our entire operation is designed
+                      specifically for corporate needs and professional
+                      environments.
                     </span>
                   </li>
                   <li className="flex gap-x-3">
                     <span>
-                      Guaranteed Reliability: 99.7% on-time completion rate with
-                      proactive communication at every step.
+                      <strong>• Guaranteed Reliability:</strong> 99.7% on-time
+                      completion rate with proactive communication at every
+                      step.
                     </span>
                   </li>
                   <li className="flex gap-x-3">
                     <span>
-                      Enterprise-Grade Security: Full insurance coverage,
-                      background-checked specialists, and secure handling
-                      protocols.
+                      <strong>• Enterprise-Grade Security:</strong> Full
+                      insurance coverage, background-checked specialists, and
+                      secure handling protocols.
                     </span>
                   </li>
                   <li className="flex gap-x-3">
                     <span>
-                      Seamless Integration: Our service works alongside your
-                      existing operations without disruption or additional
-                      management overhead.
+                      <strong>• Seamless Integration:</strong> Our service works
+                      alongside your existing operations without disruption or
+                      additional management overhead.
                     </span>
                   </li>
                 </ul>
@@ -238,15 +241,13 @@ export default function Business() {
                 requirements:
               </h2>
               {/* Plans Section */}
-              <div className="bg-gray-50">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                  <div className="text-center"></div>
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="text-center"></div>
 
-                  <div className="mt-12 grid gap-8 lg:grid-cols-2 xl:grid-cols-2 justify-items-center mx-auto">                    
-                    {pricingTiers.map((tier) => (
-                      <PricingTier key={tier.name} {...tier} />
-                    ))}
-                  </div>
+                <div className="mx-auto mt-12 grid justify-items-center gap-8 lg:grid-cols-2 xl:grid-cols-2">
+                  {pricingTiers.map((tier) => (
+                    <PricingTier key={tier.name} {...tier} />
+                  ))}
                 </div>
               </div>
               <p className="mt-10 text-base font-semibold leading-7 text-indigo-600">
@@ -264,8 +265,17 @@ export default function Business() {
             </div>
           </div>
         </div>
+        <div className="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-base font-semibold uppercase tracking-wide text-primary-dark">
+              CLIENTS WHO CHOOSE DOORBELL EVERYDAY
+            </p>
+                  </div>
+                  <BusinessLogos/>
+        </div>
       </div>
-      {/* Welcome Section */}
+
+      {/* Welcome Section
       <div className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -279,33 +289,6 @@ export default function Business() {
               outsourcing routine tasks and errands to our reliable team of
               professionals.
             </p>
-          </div>
-        </div>
-      </div>
-      {/* Hero Section
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-base font-semibold uppercase tracking-wide text-primary-dark">
-              Business Solutions
-            </p>
-            <h1 className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-              Premium Errand Services for Elite Organizations
-            </h1>
-          </div>
-
-          Hero Image
-          <div className="mt-12 flex justify-center">
-            <Image
-              src="https://res.cloudinary.com/tiyeni/image/upload/v1724606681/Screenshot_2024-08-25_at_7.24.22_PM.png"
-              alt="Doorbell business delivery service"
-              className="max-h-96 rounded-lg object-contain shadow-xl"
-              fill
-              onError={(e) => {
-                e.target.onerror = null
-                e.target.src = '/images/restaurant-screenshot.png'
-              }}
-            />
           </div>
         </div>
       </div> */}
