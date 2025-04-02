@@ -1,39 +1,173 @@
 import React from 'react';
 import MainLayout from '@/layouts/MainLayout';
-import Link from 'next/link';
+import clsx from 'clsx'
 import Image from 'next/image';
+import Head from 'next/head'
+import { CheckIcon } from '@radix-ui/react-icons';
 
-const FeatureCard = ({ title, subtitle, features }) => (
-  <div className="rounded-lg border border-gray-200 bg-white p-6 h-fit">
-    <h3 className="mb-4 text-xl font-semibold text-primary-dark">{title}</h3>
-    <p className="mb-4 text-base font-base">{subtitle}</p>
-    <ul className="space-y-2">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-start">
-          <svg
-            className="mr-2 mt-0.5 h-5 w-5 min-w-5 min-h-5 text-primary-dark"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span className="text-gray-700">{feature}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-)
+const pricingTiers = [
+  {
+    name: 'LIGHT TIER',
+    description:
+      'Entry-level solution for small businesses or occasional needs',
+    featured: false,
+    button: {
+      label: 'Buy plan',
+      href: '/register',
+    },
+    features: [
+      {
+        text: 'Up to 60 errands monthly with daily flexibility',
+        note: '(maximum 3 per day)',
+      },
+      {
+        text: 'Single-user access with straightforward request management',
+        note: '',
+      },
+      {
+        text: 'Standard support package with 24-hour response time',
+        note: '',
+      },
+    ],
+  },
+  {
+    name: 'SILVER TIER',
+    description: 'Perfect for growing businesses with consistent errand needs',
+    featured: false,
+    button: {
+      label: 'Buy plan',
+      href: '/register',
+    },
+    features: [
+      {
+        text: 'Up to 120 errands monthly with daily flexibility',
+        note: '(maximum 5 per day)',
+      },
+      {
+        text: 'Multi-user access for up to 2 team members',
+        note: '',
+      },
+      {
+        text: 'Business hours support with same-day response',
+        note: '',
+      },
+    ],
+  },
+  {
+    name: 'GOLD TIER',
+    description:
+      'Ideal for medium to large businesses with regular errand requirements',
+    featured: false,
+    button: {
+      label: 'Buy plan',
+      href: '/register',
+    },
+    features: [
+      {
+        text: 'Up to 200 errands monthly with daily flexibility',
+        note: '(maximum 10 per day)',
+      },
+      {
+        text: 'Multi-user access for up to 3 team members',
+        note: '',
+      },
+      {
+        text: 'Preferred scheduling and specialized request handling',
+        note: '',
+      },
+      {
+        text: 'Extended support hours with 3-hour response guarantee',
+        note: '',
+      },
+    ],
+  },
+  {
+    name: 'PLATINUM TIER',
+    description:
+      'Our most comprehensive offering for businesses with frequent errand needs',
+    featured: true,
+    button: {
+      label: 'Buy plan',
+      href: '/register',
+    },
+    features: [
+      {
+        text: 'Up to 250 errands monthly with daily flexibility',
+        note: '(maximum 20 per day)',
+      },
+      {
+        text: 'Multi-user access for up to 5 team members',
+        note: '',
+      },
+      {
+        text: 'Dedicated account manager and priority scheduling',
+        note: '',
+      },
+      {
+        text: '24/7 concierge support with 1-hour response guarantee',
+        note: '',
+      },
+    ],
+  },
+]
+
+function PricingTier({
+  name,
+  description,
+  features,
+  button,
+  featured = false,
+}) {
+  return (
+    <div
+      className={clsx(
+        'rounded-lg bg-white p-6',
+        featured
+          ? 'border-2 border-blue-500 shadow-lg'
+          : 'border border-gray-200'
+      )}
+    >
+      <h3 className="text-lg font-bold text-gray-900">{name}</h3>
+      <p className="mt-2 min-h-[50px] text-sm text-gray-600">{description}</p>
+
+      <button
+        className={clsx(
+          'mt-6 w-full rounded-md px-4 py-2 text-center text-sm font-medium',
+          featured
+            ? 'bg-blue-600 text-white hover:bg-blue-700'
+            : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
+        )}
+      >
+        {button.label}
+      </button>
+
+      <ul className="mt-8 space-y-4">
+        {features.map((feature, index) => (
+          <li key={index} className="flex">
+            <CheckIcon className="h-6 w-6 flex-none text-blue-500" />
+            <div className="ml-3">
+              <p className="text-sm text-gray-600">{feature.text}</p>
+              {feature.note && (
+                <p className="text-xs text-gray-400">{feature.note}</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 export default function Business() {
     
   return (
     <MainLayout title="Premium Errand Services for Elite Organizations | Doorbell">
+      <Head>
+        <meta
+          name="description"
+          content="Premium Errand Services for Elite Organizations"
+        />
+      </Head>
       <div className="relative">
         <div className="mx-auto max-w-5xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
           <div className="px-6 lg:contents">
@@ -109,52 +243,13 @@ export default function Business() {
                   <div className="text-center"></div>
 
                   <div className="mt-12 grid gap-8 lg:grid-cols-2 xl:grid-cols-4">
-                    <FeatureCard
-                      title="LIGHT PLAN"
-                      subtitle="Maximum 5 rides per day"
-                      features={[
-                        'Up to 10 deliveries per month',
-                        'Standard delivery times',
-                        'Basic reporting',
-                        'Email support',
-                      ]}
-                    />
-                    <FeatureCard
-                      title="MEDIUM PLAN"
-                      features={[
-                        'Up to 50 deliveries per month',
-                        'Priority delivery times',
-                        'Advanced reporting',
-                        'Email and phone support',
-                        'Dedicated account manager',
-                      ]}
-                    />
-                    <FeatureCard
-                      title="FULL PLAN"
-                      features={[
-                        'Up to 200 deliveries per month',
-                        'Express delivery options',
-                        'Comprehensive reporting',
-                        '24/7 priority support',
-                        'Dedicated account team',
-                        'Custom integration options',
-                      ]}
-                    />
-                    <FeatureCard
-                      title="ENTERPRISE PLAN"
-                      features={[
-                        'Unlimited deliveries',
-                        'Guaranteed SLAs',
-                        'Real-time tracking and analytics',
-                        'White-glove service',
-                        'Custom solutions',
-                        'API access for seamless integration',
-                      ]}
-                    />
+                    {pricingTiers.map((tier) => (
+                      <PricingTier key={tier.name} {...tier} />
+                    ))}
                   </div>
                 </div>
               </div>
-              <p className="text-base font-semibold leading-7 text-indigo-600">
+              <p className="mt-10 text-base font-semibold leading-7 text-indigo-600">
                 WHAT OUR CLIENTS SAY
               </p>
               <figure className="mt-4 border-l border-indigo-600 pl-9">
