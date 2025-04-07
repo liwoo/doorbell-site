@@ -27,7 +27,20 @@ function Hero() {
   return (
     <section className="animate-gradient relative h-screen overflow-hidden bg-primary bg-gradient-to-br from-primary to-primary-dark py-16 text-center text-white sm:py-24">
       {/* Background Pattern Overlay */}
-      <div className="bg-hero-pattern absolute inset-0 opacity-10"></div>
+      <div className="absolute inset-0 opacity-50">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 1654 1261"
+          className="absolute top-0"
+        >
+          <path
+            fill="#C2CEFF"
+            d="M1520.21-21.475c-6.69 65.46-13.64 131.659-50.31 188.1-36.66 56.441-106.69 102.893-213.7 115.027-132.42 15.002-298.351-23.569-443.812-26.265-233.352-4.356-356.903 99.795-462.588 198.073-105.685 98.279-212.521 196.132-366.543 268.313-97.136 45.528-248.955 70.488-399.919 18.384-123.12-42.555-206.399-125.282-230.013-197.318-23.614-72.036-21.939-147.831 27.702-197.424 335.997-335.7-55.121-616.845-70.015-817.314-8.86-119.767 97.619-215.045 216.936-215.878 312.419-2.215 416.9 158.76 825.304-105.711C774.136-1066.06 1555.9-495.511 1516.35-36.173l3.86 14.698Z"
+            opacity=".25"
+          />
+        </svg>
+      </div>
       <div className="relative z-[1] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-8">
         <h1 className="mb-6 text-3xl font-extrabold sm:text-5xl">
           Transform Your Business Operations with Premium Errand Services
@@ -299,8 +312,6 @@ function PricingToggle({ isYearly, onToggle }) {
         <div
           className={`absolute -right-4 -top-2 rounded-full bg-secondary px-2 py-1 text-xs font-bold  shadow-sm`}
         >
-          {' '}
-          {/* Adjusted positioning, rounding, colors */}
           Save 15%
         </div>
       </div>
@@ -308,7 +319,7 @@ function PricingToggle({ isYearly, onToggle }) {
   )
 }
 
-function PlanCard({ plan, isYearly }) {
+ function PlanCard({ plan, isYearly }) {
   const formatCurrency = (amount) => {
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
@@ -350,12 +361,13 @@ function PlanCard({ plan, isYearly }) {
       </p>
 
       <div
-        className={`mb-6 flex w-fit justify-center rounded-lg p-4 text-center transition-all duration-300 ease-in-out sm:mb-8`}
-        // ${
-        //   plan.popular
-        //     ? 'from-accent-light bg-gradient-to-b to-accent shadow-md shadow-inner'
-        //     : 'bg-gradient-to-b from-gray-100 to-gray-200 shadow-inner'
-        // }
+        className={`mb-6 flex w-fit justify-center rounded-lg p-4 text-center shadow-inner transition-all duration-300 ease-in-out sm:mb-8
+          ${
+            plan.popular
+              ? 'bg-secondary'
+              : 'bg-gradient-to-b from-gray-50 to-gray-100'
+          }
+          `}
       >
         <div className={`plan-price ${!isYearly ? 'block' : 'hidden'}`}>
           <span className="currency text-gray-text mb-1 block text-sm font-semibold">
@@ -386,7 +398,12 @@ function PlanCard({ plan, isYearly }) {
           <span className="period text-gray-period mt-1 block text-xs sm:text-sm">
             /year
           </span>
-          <span className="mt-2 inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-800">
+          <span
+            className={`${
+              plan.popular
+                ? 'bg-primary-dark text-white' : 'bg-green-100 text-green-800'
+            } mt-2 inline-block rounded-full  px-3 py-1 text-xs font-bold `}
+          >
             Save MWK {formatCurrency(savings)}
           </span>
         </div>
