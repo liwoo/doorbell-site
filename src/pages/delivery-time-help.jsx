@@ -1,5 +1,6 @@
 import React from 'react';
 import MainLayout from "@/layouts/MainLayout";
+import Email from '@/components/Email'
 
 const InfoSection = ({ title, content }) => (
   <div className="mb-8">
@@ -38,14 +39,15 @@ export default function DeliveryTimeHelp() {
 
   return (
     <MainLayout title="Delivery Time Help | Doorbell">
-      <div className="bg-white px-4 sm:px-6 py-24 lg:px-8 lg:py-40">
+      <div className="bg-white px-4 py-24 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          <h1 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Understanding Our Delivery Time Slots
           </h1>
           <p className="mb-8 text-lg text-gray-700">
-            At Doorbell, we strive to provide the best possible delivery experience. Part of this commitment
-            involves managing our delivery times efficiently. Here&apos;s a detailed explanation of how our
+            At Doorbell, we strive to provide the best possible delivery
+            experience. Part of this commitment involves managing our delivery
+            times efficiently. Here&apos;s a detailed explanation of how our
             delivery slot system works and why we use it:
           </p>
 
@@ -53,21 +55,25 @@ export default function DeliveryTimeHelp() {
             <InfoSection key={index} {...section} />
           ))}
 
-          <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-            <p className="text-blue-700 font-semibold">
-              Tip: For the best chance of getting your preferred delivery time, try to place your order
-              in advance, especially during peak hours. Keep an eye out for new slots that may open up
-              if your initial preferred time isn&apos;t available.
+          <div className="mt-8 rounded-lg bg-blue-50 p-4">
+            <p className="font-semibold text-blue-700">
+              Tip: For the best chance of getting your preferred delivery time,
+              try to place your order in advance, especially during peak hours.
+              Keep an eye out for new slots that may open up if your initial
+              preferred time isn&apos;t available.
             </p>
           </div>
 
           <p className="mt-8 text-lg text-gray-700">
-            We@re committed to transparency and continuous improvement. If you have any questions about
-            our delivery slot system or suggestions for how we can serve you better, please don&apos;t hesitate
-            to contact our customer support team. Thank you for choosing Doorbell for your delivery needs!
+            We&apos;re committed to transparency and continuous improvement. If you
+            have any questions about our delivery slot system or suggestions for
+            how we can serve you better, please don&apos;t hesitate to contact
+            our customer support team. Thank you for choosing Doorbell for your
+            delivery needs!
           </p>
         </div>
       </div>
+      <Email />
     </MainLayout>
-  );
+  )
 }
