@@ -339,7 +339,7 @@ function PricingToggle({ isYearly, onToggle }) {
             after:transition-height after:absolute after:left-0 after:top-0 after:h-[5px] after:w-full after:duration-300 after:ease-in-out after:content-['']
             ${
               plan.popular
-                ? 'after:to-accent-dark after:bg-gradient-to-r after:from-secondary'
+                ? 'after:to-secondary after:bg-gradient-to-r after:from-secondary'
                 : 'after:bg-gradient-to-r after:from-primary-light after:to-primary'
             }
         `}
