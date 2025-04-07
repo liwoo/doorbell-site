@@ -1,418 +1,585 @@
-import React from 'react';
-import MainLayout from '@/layouts/MainLayout';
+import React from 'react'
+import { useState, useEffect } from 'react'
+import MainLayout from '@/layouts/MainLayout'
 import clsx from 'clsx'
-import Image from 'next/image';
-import Head from 'next/head'
-import { CheckIcon } from '@radix-ui/react-icons';
-import OurClients from '@/components/OurClients';
+import { CheckIcon } from '@radix-ui/react-icons'
+import OurClients from '@/components/OurClients'
+import { Button } from '@/components/Button'
+import Image from 'next/image'
+import RequestConsultation from '@/components/RequestConsultation'
+import Testimonies from '@/components/Testimonies'
 
-const pricingTiers = [
-  {
-    name: 'LIGHT TIER',
-    description:
-      'Entry-level solution for small businesses or occasional needs',
-    featured: false,
-    button: {
-      label: 'Buy plan',
-      href: '/register',
-    },
-    features: [
-      {
-        text: 'Up to 60 errands monthly with daily flexibility',
-        note: '(maximum 3 per day)',
-      },
-      {
-        text: 'Single-user access with straightforward request management',
-        note: '',
-      },
-      {
-        text: 'Standard support package with 24-hour response time',
-        note: '',
-      },
-    ],
-  },
-  {
-    name: 'SILVER TIER',
-    description: 'Perfect for growing businesses with consistent errand needs',
-    featured: false,
-    button: {
-      label: 'Buy plan',
-      href: '/register',
-    },
-    features: [
-      {
-        text: 'Up to 120 errands monthly with daily flexibility',
-        note: '(maximum 5 per day)',
-      },
-      {
-        text: 'Multi-user access for up to 2 team members',
-        note: '',
-      },
-      {
-        text: 'Business hours support with same-day response',
-        note: '',
-      },
-    ],
-  },
-  {
-    name: 'GOLD TIER',
-    description:
-      'Ideal for medium to large businesses with regular errand requirements',
-    featured: false,
-    button: {
-      label: 'Buy plan',
-      href: '/register',
-    },
-    features: [
-      {
-        text: 'Up to 200 errands monthly with daily flexibility',
-        note: '(maximum 10 per day)',
-      },
-      {
-        text: 'Multi-user access for up to 3 team members',
-        note: '',
-      },
-      {
-        text: 'Preferred scheduling and specialized request handling',
-        note: '',
-      },
-      {
-        text: 'Extended support hours with 3-hour response guarantee',
-        note: '',
-      },
-    ],
-  },
-  {
-    name: 'PLATINUM TIER',
-    description:
-      'Our most comprehensive offering for businesses with frequent errand needs',
-    featured: true,
-    button: {
-      label: 'Buy plan',
-      href: '/register',
-    },
-    features: [
-      {
-        text: 'Up to 250 errands monthly with daily flexibility',
-        note: '(maximum 20 per day)',
-      },
-      {
-        text: 'Multi-user access for up to 5 team members',
-        note: '',
-      },
-      {
-        text: 'Dedicated account manager and priority scheduling',
-        note: '',
-      },
-      {
-        text: '24/7 concierge support with 1-hour response guarantee',
-        note: '',
-      },
-    ],
-  },
-]
-
-function PricingTier({
-  name,
-  description,
-  features,
-  button,
-  featured = false,
-}) {
+export default function Business() {
   return (
-    <div
-      className={clsx(
-        'rounded-xl bg-white p-6 w-96',
-        featured
-          ? 'border-2 border-primary shadow-xl'
-          : 'border border-gray-200'
-      )}
-    >
-      <h3 className="text-lg font-bold text-gray-900">{name}</h3>
-      <p className="mt-2 min-h-[50px] text-sm text-gray-600">{description}</p>
+    <MainLayout title="Premium Errand Services for Elite Organizations | Doorbell">
+      <Hero />
+      {/* <OurClients /> */}
+      <Features />
+      <Pricing />
+      <Testimonials />
+      {/* <Newsletter /> */}
+      <RequestConsultation />
+    </MainLayout>
+  )
+}
 
-      <button
-        className={clsx(
-          'mt-6 w-full rounded-md px-4 py-2 text-center text-sm font-bold',
-          featured
-            ? 'bg-primary text-white hover:bg-blue-700'
-            : 'text-primary hover:bg-blue-50 font-bold'
-        )}
-      >
-        {button.label}
-      </button>
+function Hero() {
+  return (
+    <section className="animate-gradient relative h-screen overflow-hidden bg-primary bg-gradient-to-br from-primary to-primary-dark py-16 text-center text-white sm:py-24">
+      {/* Background Pattern Overlay */}
+      <div className="bg-hero-pattern absolute inset-0 opacity-10"></div>
+      <div className="relative z-[1] mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-8">
+        <h1 className="mb-6 text-3xl font-extrabold sm:text-5xl">
+          Transform Your Business Operations with Premium Errand Services
+        </h1>
+        <p className="mx-auto mb-8 max-w-3xl text-lg sm:text-xl">
+          Free up your team&apos;s valuable time and focus on what matters most:
+          driving growth and innovation with our subscription-based errand
+          service designed for elite organizations.
+        </p>
+        <div className="hero-cta flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+          <Button
+            href="#pricing"
+            className="mx-2.5 hidden bg-secondary text-gray-800 lg:block"
+          >
+            View Pricing Plans
+          </Button>
+          <Button
+            href="#get-in-touch"
+            variant="outline"
+            className="hidden lg:flex"
+          >
+            <span className="mx-2.5text-gray-100">Request Demo</span>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
 
-      <ul className="mt-8 space-y-4">
-        {features.map((feature, index) => (
-          <li key={index} className="flex">
-            <CheckIcon className="h-6 w-6 flex-none text-black" />
-            <div className="ml-3">
-              <p className="text-sm text-gray-600">{feature.text}</p>
-              {feature.note && (
-                <p className="text-xs text-gray-400">{feature.note}</p>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+function SectionTitle({ title, subtitle }) {
+  return (
+    <div className="relative mb-12 flex flex-col items-center justify-center text-center">
+      <h2 className="relative mb-2 inline-block text-3xl font-bold text-primary-dark after:absolute after:-bottom-2.5 after:left-1/2 after:h-1 after:w-16 after:-translate-x-1/2 after:rounded-sm after:bg-secondary after:content-[''] sm:text-4xl">
+        {title}
+      </h2>
+      {subtitle && <p className="text-gray-medium mt-2">{subtitle}</p>}
     </div>
   )
 }
 
-export default function Business() {
-    
+function AdvantageOverview() {
   return (
-    <MainLayout title="Premium Errand Services for Elite Organizations | Doorbell">
-      <Head>
-        <meta
-          name="description"
-          content="Premium Errand Services for Elite Organizations"
+    <section className="advantage-overview mb-16 grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+      <div className="advantage-image relative h-72 w-full overflow-hidden rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl md:h-96">
+        <Image
+          src="https://res.cloudinary.com/tiyeni/image/upload/v1724606681/Screenshot_2024-08-25_at_7.24.22_PM.png"
+          alt="DoorBell Business Service"
+          className="block h-full w-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+          fill
         />
-      </Head>
-      <div className="relative">
-        <div className="mx-auto max-w-5xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
-          <div className="px-6 lg:contents">
-            <div className="mx-auto pb-24 pt-48">
-              <p className="text-base font-semibold leading-7 text-indigo-600">
-                DOORBELL FOR BUSINESS
-              </p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Premium Errand Services for Elite Organizations
-              </h1>
-              <Image
-                src="https://res.cloudinary.com/tiyeni/image/upload/v1724606681/Screenshot_2024-08-25_at_7.24.22_PM.png"
-                alt="Doorbell Services Team"
-                width={800}
-                height={533}
-                className="mt-10 w-full"
-              />
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                Welcome To A New Era Of Business Efficiency
-              </h2>
-              <p className="mt-6 text-xl leading-8 text-gray-700">
-                At DoorBell for Business, we understand that your
-                organization&apos;s most valuable resource is time. Our premium
-                subscription-based errand service empowers high-performing
-                businesses to delegate routine tasks and logistics, allowing
-                your team to focus on what truly matters: driving growth and
-                innovation.
-              </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                The Doorbell Advantage
-              </h2>
-              <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 lg:max-w-none">
-                <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong>• Exclusive Business Focus:</strong> Unlike
-                      consumer errand services, our entire operation is designed
-                      specifically for corporate needs and professional
-                      environments.
-                    </span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong>• Guaranteed Reliability:</strong> 99.7% on-time
-                      completion rate with proactive communication at every
-                      step.
-                    </span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong>• Enterprise-Grade Security:</strong> Full
-                      insurance coverage, background-checked specialists, and
-                      secure handling protocols.
-                    </span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong>• Seamless Integration:</strong> Our service works
-                      alongside your existing operations without disruption or
-                      additional management overhead.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <p className="mt-16 font-semibold leading-7 tracking-tight text-indigo-600">
-                Subscription Tiers Tailored To Your Needs
-              </p>
-              <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900">
-                Choose the plan that aligns with your organization&apos;s
-                requirements:
-              </h2>
-              {/* Plans Section */}
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="text-center"></div>
-
-                <div className="mx-auto mt-12 grid justify-items-center gap-8 lg:grid-cols-2 xl:grid-cols-2">
-                  {pricingTiers.map((tier) => (
-                    <PricingTier key={tier.name} {...tier} />
-                  ))}
-                </div>
-              </div>
-              <p className="mt-10 text-base font-semibold leading-7 text-indigo-600">
-                WHAT OUR CLIENTS SAY
-              </p>
-              <figure className="mt-4 border-l border-indigo-600 pl-9">
-                <blockquote className="font-semibold text-gray-900">
-                  <p>
-                    DoorBell for Business has become an invaluable extension of
-                    our team. The service pays for itself in recovered
-                    productivity alone.
-                  </p>
-                </blockquote>
-              </figure>
+      </div>
+      <div className="advantage-text">
+        <h3 className="mb-6 text-2xl font-semibold text-primary-dark sm:text-3xl">
+          Premium Errand Service Tailored for Businesses
+        </h3>
+        <p className="text-gray-medium mb-8 text-base leading-relaxed sm:text-lg">
+          DoorBell for Business brings efficiency and reliability to your
+          organization through our specialized errand service. Free up your
+          team&apos;s time and focus on your core business activities.
+        </p>
+        <div className="stats-container mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
+          <div className="stat-box flex-1 rounded-lg border-b-4 border-secondary bg-white p-4 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md sm:p-6">
+            <div className="stat-number mb-1 text-3xl font-bold text-primary-dark sm:mb-2 sm:text-4xl">
+              99.7
+              <span className="text-accent-dark text-xl sm:text-2xl">%</span>
+            </div>
+            <div className="stat-label text-gray-medium text-sm sm:text-base">
+              On-time delivery
+            </div>
+          </div>
+          <div className="stat-box flex-1 rounded-lg border-b-4 border-secondary bg-white p-4 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md sm:p-6">
+            <div className="stat-number mb-1 text-3xl font-bold text-primary-dark sm:mb-2 sm:text-4xl">
+              100
+              <span className="text-accent-dark text-xl sm:text-2xl">%</span>
+            </div>
+            <div className="stat-label text-gray-medium text-sm sm:text-base">
+              Background-checked staff
+            </div>
+          </div>
+          <div className="stat-box flex-1 rounded-lg border-b-4 border-secondary bg-white p-4 text-center shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md sm:p-6">
+            <div className="stat-number mb-1 text-3xl font-bold text-primary-dark sm:mb-2 sm:text-4xl">
+              24
+              <span className="text-accent-dark text-base sm:text-xl">/7</span>
+            </div>
+            <div className="stat-label text-gray-medium text-sm sm:text-base">
+              Support availability
             </div>
           </div>
         </div>
-        <div className="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* TODO: Implement <OurClients />  */}
+      </div>
+    </section>
+  )
+}
+
+function ProcessSteps() {
+  const steps = [
+    {
+      number: 1,
+      title: 'Register Your Business',
+      description:
+        'Sign up and set up your business profile with all necessary details and requirements.',
+    },
+    {
+      number: 2,
+      title: 'Submit Errand Requests',
+      description:
+        'Use our intuitive dashboard to submit errand requests with specific instructions.',
+    },
+    {
+      number: 3,
+      title: 'Track in Real-Time',
+      description:
+        'Monitor your errands in real-time with our advanced tracking system.',
+    },
+    {
+      number: 4,
+      title: 'Receive & Review',
+      description:
+        'Accept completed errands and provide feedback to help us continuously improve.',
+    },
+  ]
+
+  return (
+    <section className="my-16 h-fit">
+      <SectionTitle title="How It Works - A Simple Four-Step Process"></SectionTitle>
+      <div className="steps-container relative mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:grid-cols-4 lg:gap-6">
+        {/* Horizontal connecting line */}
+        <div className="absolute left-0 right-0 top-10 z-0 hidden h-[3px] bg-gradient-to-r from-primary-light to-accent md:block"></div>
+
+        {steps.map((step, index) => (
+          <div
+            key={step.number}
+            className="relative z-10 mb-8 flex flex-col items-center md:mb-0"
+          >
+            <div>
+              <div
+                className={`relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-4 border-white text-3xl font-bold shadow-lg
+                            ${
+                              index % 2 === 0
+                                ? 'bg-primary-dark text-white'
+                                : 'text-text-dark bg-secondary'
+                            }`}
+              >
+                {step.number}
+              </div>
+            </div>
+            <div className="group h-full w-full rounded-lg bg-white p-6 shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-md">
+              <h4 className="mb-3 text-center text-2xl font-semibold text-primary-dark">
+                {step.title}
+              </h4>
+              <p className="text-gray-medium flex min-h-[4rem] items-center justify-center text-center text-sm">
+                {step.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function FeatureCard({ icon, title, description }) {
+  return (
+    <div className="group relative overflow-hidden rounded-lg border-t-4 border-primary-dark bg-white p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-3 hover:shadow-xl sm:p-10">
+      <div className="to-accent-dark absolute left-0 top-0 h-[5px] w-full -translate-x-full transform bg-gradient-to-r from-accent transition-transform duration-500 ease-in-out group-hover:translate-x-0"></div>
+      <div className="from-primary-icon-bg to-accent-icon-bg group-hover:from-accent-icon-bg group-hover:to-primary-icon-bg mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br shadow-md transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:bg-gradient-to-br sm:h-20 sm:w-20">
+        <i className="text-3xl text-primary">{icon}</i>
+      </div>
+      <h3 className="relative mb-4 pb-3 text-xl font-semibold text-primary-dark after:absolute after:bottom-0 after:left-1/2 after:h-[3px] after:w-10 after:-translate-x-1/2 after:bg-secondary after:content-[''] sm:text-2xl">
+        {title}
+      </h3>
+      <p className="text-gray-medium">{description}</p>
+    </div>
+  )
+}
+
+function Features() {
+  const featuresList = [
+    {
+      icon: '🏢',
+      title: 'Exclusive Business Focus',
+      description:
+        'Unlike consumer errand services, our entire operation is designed specifically for corporate needs and professional environments.',
+    },
+    {
+      icon: '✓',
+      title: 'Guaranteed Reliability',
+      description:
+        '99.7% on-time completion rate with proactive communication at every step of the process.',
+    },
+    {
+      icon: '🔒',
+      title: 'Enterprise-Grade Security',
+      description:
+        'Full insurance coverage, background-checked specialists, and secure handling protocols for your peace of mind.',
+    },
+    {
+      icon: '🔄',
+      title: 'Seamless Integration',
+      description:
+        'Our service works alongside your existing operations without disruption or additional management overhead.',
+    },
+  ]
+
+  return (
+    <section
+      id="features"
+      className="from-gray-light bg-gradient-to-b to-white py-16 sm:py-20"
+    >
+      <div className="container mx-auto max-w-7xl px-4 sm:px-8">
+        <SectionTitle
+          title="The DoorBell Advantage"
+          subtitle="Our business-focused approach sets us apart"
+        />
+        <AdvantageOverview />
+        <ProcessSteps />
+        <div className="feature-grid mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {featuresList.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PricingToggle({ isYearly, onToggle }) {
+  return (
+    <div className="pricing-toggle-container mb-12 flex justify-center">
+      <div className="pricing-toggle relative z-[2] flex flex-col items-center rounded-full bg-white p-2 shadow-md sm:flex-row">
+        <span
+          className={`toggle-option relative cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ease-in-out sm:px-6 sm:py-3 sm:text-base ${
+            !isYearly
+              ? 'bg-primary-dark text-white'
+              : 'text-gray-medium hover:text-primary-dark'
+          }`}
+          onClick={() => onToggle(false)}
+        >
+          Monthly
+        </span>
+        <div className="relative mx-2 my-2 inline-block h-6 w-12 sm:my-0">
+          <input
+            type="checkbox"
+            id="billing-toggle"
+            checked={isYearly}
+            onChange={(e) => onToggle(e.target.checked)}
+            className="peer h-0 w-0 opacity-0"
+          />
+          <label
+            htmlFor="billing-toggle"
+            className="absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-gray-300 transition-all duration-300 ease-in-out before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:transition-all before:duration-300 before:ease-in-out before:content-[''] peer-checked:bg-secondary peer-checked:before:translate-x-6 peer-focus:ring-2 peer-focus:ring-accent"
+          ></label>
+        </div>
+        <span
+          className={`toggle-option relative cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ease-in-out sm:px-6 sm:py-3 sm:text-base ${
+            isYearly
+              ? 'bg-primary-dark text-white'
+              : 'text-gray-medium hover:text-primary-dark'
+          }`}
+          onClick={() => onToggle(true)}
+        >
+          Yearly
+        </span>
+        <div
+          className={`absolute -right-4 -top-2 rounded-full bg-secondary px-2 py-1 text-xs font-bold  shadow-sm`}
+        >
+          {' '}
+          {/* Adjusted positioning, rounding, colors */}
+          Save 15%
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PlanCard({ plan, isYearly }) {
+  const formatCurrency = (amount) => {
+    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
+
+  const monthlyPrice = plan.monthlyPrice
+  const yearlyPrice = Math.round(plan.monthlyPrice * 12 * 0.85) // 15% discount
+  const savings = plan.monthlyPrice * 12 - yearlyPrice
+
+  return (
+    <div
+      className={`border-gray relative flex h-full w-full flex-col items-center overflow-hidden rounded-xl border bg-white p-6 transition-all duration-300 ease-in-out hover:-translate-y-2.5 hover:shadow-lg sm:p-8 lg:p-10
+            ${
+              plan.popular
+                ? 'z-10 border-2 border-secondary shadow-md'
+                : 'hover:border-primary-light'
+            }
+            after:transition-height after:absolute after:left-0 after:top-0 after:h-[5px] after:w-full after:duration-300 after:ease-in-out after:content-['']
+            ${
+              plan.popular
+                ? 'after:to-accent-dark after:bg-gradient-to-r after:from-secondary'
+                : 'after:bg-gradient-to-r after:from-primary-light after:to-primary'
+            }
+        `}
+    >
+      {plan.popular && (
+        <div
+          className={`absolute -top-2 right-5 z-10 rounded-bl-xl rounded-br-xl bg-secondary px-2 py-2 text-xs  font-bold shadow-sm`}
+        >
+          {' '}
+          {/* Adjusted positioning, rounding, colors */}
+          <p className="mt-1">Most Popular</p>
+        </div>
+      )}
+      <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-primary-dark sm:text-2xl">
+        {plan.icon} {plan.title}
+      </h3>
+      <p className="text-gray-medium mb-6 min-h-[60px] text-sm sm:mb-8">
+        {plan.description}
+      </p>
+
+      <div
+        className={`mb-6 flex w-fit justify-center rounded-lg p-4 text-center transition-all duration-300 ease-in-out sm:mb-8`}
+        // ${
+        //   plan.popular
+        //     ? 'from-accent-light bg-gradient-to-b to-accent shadow-md shadow-inner'
+        //     : 'bg-gradient-to-b from-gray-100 to-gray-200 shadow-inner'
+        // }
+      >
+        <div className={`plan-price ${!isYearly ? 'block' : 'hidden'}`}>
+          <span className="currency text-gray-text mb-1 block text-sm font-semibold">
+            MWK
+          </span>
+          <span
+            className={`amount text-3xl font-extrabold leading-none sm:text-4xl ${
+              plan.popular ? 'text-text-dark' : 'text-primary-dark'
+            }`}
+          >
+            {formatCurrency(monthlyPrice)}
+          </span>
+          <span className="period text-gray-period mt-1 block text-xs sm:text-sm">
+            /month
+          </span>
+        </div>
+        <div className={`plan-price ${isYearly ? 'block' : 'hidden'}`}>
+          <span className="currency text-gray-text mb-1 block text-sm font-semibold">
+            MWK
+          </span>
+          <span
+            className={`amount text-3xl font-extrabold leading-none sm:text-4xl ${
+              plan.popular ? 'text-text-dark' : 'text-primary-dark'
+            }`}
+          >
+            {formatCurrency(yearlyPrice)}
+          </span>
+          <span className="period text-gray-period mt-1 block text-xs sm:text-sm">
+            /year
+          </span>
+          <span className="mt-2 inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-800">
+            Save MWK {formatCurrency(savings)}
+          </span>
         </div>
       </div>
 
-      {/* Welcome Section
-      <div className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Welcome To A New Era Of Business Efficiency
-            </h2>
-            <p className="mt-4 text-lg text-gray-500">
-              At Doorbell, we understand that time is your most valuable asset.
-              We&apos;ve created a specialized service designed to help your
-              business achieve greater efficiency and productivity by
-              outsourcing routine tasks and errands to our reliable team of
-              professionals.
+      <ul className="plan-features mb-8 min-h-[180px] flex-grow list-none pl-0 sm:mb-10">
+        {plan.features.map((feature, index) => (
+          <li key={index} className="mb-3 sm:mb-4">
+            <div className="flex items-start text-sm sm:text-base">
+              <span className="bg-primary-icon-bg mr-3 mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-primary">
+                ✓
+              </span>
+              <div className="flex flex-col">
+                <p className="text-base font-medium">{feature.text}</p>
+                {feature.note && (
+                  <p className="text-sm text-gray-700">{feature.note}</p>
+                )}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <a
+        href="#"
+        className={`plan-button mt-auto block rounded-full px-6 py-3 text-center font-semibold no-underline shadow-md transition-all duration-300 ease-in-out
+                ${
+                  plan.popular
+                    ? 'to-accent-dark text-text-dark bg-secondary hover:-translate-y-1 hover:shadow-lg'
+                    : 'bg-primary-dark text-white hover:-translate-y-1 hover:shadow-lg'
+                }`}
+      >
+        Buy plan
+      </a>
+    </div>
+  )
+}
+
+function Pricing() {
+  const [isYearly, setIsYearly] = useState(false)
+
+  const plans = [
+    {
+      icon: '🛵',
+      title: 'LIGHT TIER',
+      description:
+        'Entry-level solution for small businesses or occasional needs',
+      monthlyPrice: 75000,
+      features: [
+        { text: 'Up to 60 errands monthly', note: 'max 3/day' },
+        { text: 'Single-user access' },
+        { text: 'Standard support', note: '24hr response' },
+      ],
+      popular: false,
+    },
+    {
+      icon: '🚚',
+      title: 'SILVER TIER',
+      description:
+        'Perfect for growing businesses with consistent errand needs',
+      monthlyPrice: 150000,
+      features: [
+        { text: 'Up to 120 errands monthly', note: 'max 5/day' },
+        { text: 'Multi-user access', note: '2 users' },
+        { text: 'Business hours support', note: 'same-day response' },
+      ],
+      popular: false,
+    },
+    {
+      icon: '⭐',
+      title: 'GOLD TIER',
+      description:
+        'Ideal for medium to large businesses with regular errand requirements',
+      monthlyPrice: 250000,
+      features: [
+        { text: 'Up to 200 errands monthly', note: 'priority' },
+        { text: 'Multi-user access', note: '5 users' },
+        { text: 'Priority support', note: '4hr response' },
+        { text: 'Dedicated account manager' },
+      ],
+      popular: true,
+    },
+    {
+      icon: '💎',
+      title: 'PLATINUM TIER',
+      description:
+        'Our most comprehensive offering for businesses with frequent errand needs',
+      monthlyPrice: 450000,
+      features: [
+        { text: 'Unlimited errands' },
+        { text: 'Enterprise access' },
+        { text: '24/7 premium support', note: 'immediate response' },
+        { text: 'Custom API integration options' },
+      ],
+      popular: false,
+    },
+  ]
+
+  return (
+    <section
+      id="pricing"
+      className="pricing bg-gradient-to-b from-gray-50 to-white py-16 sm:py-20"
+    >
+      <div className="container mx-auto max-w-7xl px-4 sm:px-8">
+        <SectionTitle
+          title="Subscription Tiers Tailored to Your Needs"
+          subtitle="Choose the plan that aligns with your organization's requirements"
+        />
+        <PricingToggle isYearly={isYearly} onToggle={setIsYearly} />
+        <div className="plan-grid mt-10 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {plans.map((plan, index) => (
+            <PlanCard key={index} plan={plan} isYearly={isYearly} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Testimonials() {
+  return (
+    <section className="testimonials bg-gray-light py-16 sm:py-20">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-8">
+        <SectionTitle
+          title="What Our Clients Say"
+          subtitle="Success stories from businesses that have transformed their operations"
+        />
+        <div className="testimonial-container">
+          <div className="testimonial-card relative mb-8 overflow-hidden rounded-lg bg-white p-8 shadow-md sm:p-10">
+            <span
+              className="absolute left-4 top-4 z-0 select-none font-serif text-6xl leading-none text-primary/10 sm:left-5 sm:top-5 sm:text-8xl"
+              aria-hidden="true"
+            >
+              “
+            </span>
+            <p className="testimonial-text relative z-10 mb-6 pl-4 text-lg italic text-gray-700 sm:pl-6 sm:text-xl">
+              DoorBell for Business has become an invaluable extension of our
+              team. The service pays for itself in recovered productivity alone.
+              Our staff can focus on strategic tasks while DoorBell handles all
+              our errands efficiently.
             </p>
+            <div className="client-info relative z-10 flex items-center pl-4 sm:pl-6">
+              <Image
+                width={100}
+                height={100}
+                className="mr-4 h-16 w-16 rounded-full object-cover lg:h-24 lg:w-24"
+                src="/images/testimonies/hosanna.jpg"
+                alt=""
+              />
+              <div>
+                <div className="client-name text-base font-semibold text-primary-dark sm:text-lg">
+                  Hosanna Mapira
+                </div>
+                <div className="client-position text-gray-medium text-sm sm:text-base">
+                  Lilongwe, Malawi
+                </div>
+              </div>
+            </div>
           </div>
+          {/* Add more testimonials as needed */}
         </div>
-      </div> */}
+      </div>
+    </section>
+  )
+}
 
-      {/* Advantages Section
-      <div className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base font-semibold uppercase tracking-wide text-primary-dark">
-              The Doorbell Advantage
-            </h2>
-          </div>
-
-          <div className="mt-10">
-            <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Enhanced Business Agility
-                  </p>
-                </dt>
-                <dd className="ml-16 mt-2 text-base text-gray-500">
-                  Our on-demand services let you respond to emerging needs
-                  quickly, so you can stay competitive in today&apos;s
-                  fast-paced business environment.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Cost Reduction
-                  </p>
-                </dt>
-                <dd className="ml-16 mt-2 text-base text-gray-500">
-                  Eliminate the need for full-time staff dedicated to errands
-                  and routine tasks, while maintaining productivity and
-                  operational efficiency.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Enterprise-Grade Reliability
-                  </p>
-                </dt>
-                <dd className="ml-16 mt-2 text-base text-gray-500">
-                  Our dedicated team undergoes rigorous training to ensure your
-                  business needs are handled with the utmost professionalism and
-                  attention to detail.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-dark text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                      />
-                    </svg>
-                  </div>
-                  <p className="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Seamless Integration
-                  </p>
-                </dt>
-                <dd className="ml-16 mt-2 text-base text-gray-500">
-                  Our services easily integrate with your existing operations
-                  and software systems for a cohesive business workflow.
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </div> */}
-    </MainLayout>
+// Newsletter Section Component
+function Newsletter() {
+  return (
+    <section className="newsletter bg-white py-12 sm:py-16">
+      <div className="newsletter-container mx-auto max-w-2xl px-4 text-center sm:px-8">
+        <h2 className="newsletter-title mb-4 text-2xl font-semibold text-primary-dark sm:text-3xl">
+          Subscribe for Exclusive Offers
+        </h2>
+        <p className="newsletter-description text-gray-medium mb-6 sm:mb-8">
+          Join our newsletter to receive special promotions, business efficiency
+          tips, and early access to new features.
+        </p>
+        <form className="newsletter-form mx-auto flex max-w-lg flex-col gap-2 sm:flex-row sm:gap-3">
+          <input
+            type="email"
+            className="newsletter-input border-gray flex-grow rounded-md border px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary-light"
+            placeholder="Your business email"
+            required
+          />
+          <button
+            type="submit"
+            className="newsletter-button cursor-pointer rounded-md bg-primary px-6 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-primary-dark"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
   )
 }
