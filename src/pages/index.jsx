@@ -7,6 +7,7 @@ import Contact from '@/components/Contact'
 import Testimonies from '@/components/Testimonies'
 import Download from '@/components/Download'
 import MainLayout from '@/layouts/MainLayout'
+import Email from '@/components/Email'
 import OurClients from '@/components/OurClients'
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Contact />
       <Testimonies />
       <Download />
+      <Email />
     </MainLayout>
   )
 }

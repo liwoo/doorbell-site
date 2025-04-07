@@ -1,6 +1,7 @@
 import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
 import Link from 'next/link'
+import Email from '@/components/Email'
 
 export default function PressRelease() {
   const appScreenshots = [
@@ -166,6 +167,7 @@ export default function PressRelease() {
           </div>
         </div>
       </div>
+      <Email />
     </MainLayout>
   )
 }
