@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import MainLayout from '@/layouts/MainLayout'
+import Email from '@/components/Email'
 
 export default function ChangePhone() {
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -85,6 +86,7 @@ export default function ChangePhone() {
           </button>
         </form>
       </div>
+      <Email />
     </MainLayout>
   )
 }

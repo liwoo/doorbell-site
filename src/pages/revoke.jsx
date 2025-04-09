@@ -13,6 +13,7 @@ import ToastContainer from '@/components/toast/toastContainer'
 import { useToast } from '@/components/toast/use-toast'
 import { IconoirProvider, InfoCircle } from 'iconoir-react'
 import { RequestReceivedMessage } from '@/components/RequestRecieved'
+import Email from '@/components/Email'
 
 export default function Revoke() {
   return (
@@ -271,6 +272,7 @@ export function RevokeForm() {
         </div>
 
         <ToastContainer />
+        <Email />
       </MainLayout>
     </IconoirProvider>
   )

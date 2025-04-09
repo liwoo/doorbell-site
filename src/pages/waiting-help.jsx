@@ -1,5 +1,6 @@
 import React from 'react';
 import MainLayout from "@/layouts/MainLayout";
+import Email from '@/components/Email'
 
 const InfoSection = ({ title, content }) => (
   <div className="mb-8">
@@ -36,30 +37,34 @@ export default function WaitingHelp() {
     <MainLayout title="Waiting for Confirmation Help | Doorbell">
       <div className="bg-white px-4 py-24 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          <h1 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Understanding the &apos;Waiting for Confirmation&apos; Stage
           </h1>
           <p className="mb-8 text-lg text-gray-700">
-            At Doorbell, we want to ensure your order is processed smoothly from start to finish.
-            The &apos;Waiting for Confirmation&apos; stage is an important part of this process. Here&apos;s everything
-            you need to know about this stage:
+            At Doorbell, we want to ensure your order is processed smoothly from
+            start to finish. The &apos;Waiting for Confirmation&apos; stage is
+            an important part of this process. Here&apos;s everything you need
+            to know about this stage:
           </p>
           {infoSections.map((section, index) => (
             <InfoSection key={index} {...section} />
           ))}
-          <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+          <div className="mt-8 rounded-lg bg-blue-50 p-4">
             <p className="text-blue-700">
-              Tip: Keep an eye on your phone and our app during this stage. If we need to reach you about your order,
-              we&apos;ll send you a notification or give you a call.
+              Tip: Keep an eye on your phone and our app during this stage. If
+              we need to reach you about your order, we&apos;ll send you a
+              notification or give you a call.
             </p>
           </div>
           <p className="mt-8 text-lg text-gray-700">
-            If you have any other questions or concerns while waiting for your order confirmation,
-            please don&apos;t hesitate to contact our customer support team through the app or website.
-            We&apos;re here to help ensure your Doorbell experience is as smooth as possible!
+            If you have any other questions or concerns while waiting for your
+            order confirmation, please don&apos;t hesitate to contact our
+            customer support team through the app or website. We&apos;re here to
+            help ensure your Doorbell experience is as smooth as possible!
           </p>
         </div>
       </div>
+      <Email />
     </MainLayout>
-  );
+  )
 }

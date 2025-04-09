@@ -1,5 +1,6 @@
 import MainLayout from "@/layouts/MainLayout";
 import Link from "next/link";
+import Email from '@/components/Email'
 
 const faqs = [
     {
@@ -69,6 +70,7 @@ export default function Support() {
                     </div>
                 </div>
             </div>
+            <Email />
         </MainLayout>
     )
 }

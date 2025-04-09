@@ -122,11 +122,11 @@ export function Header() {
               variant="outline"
               className="hidden lg:flex"
             >
-              <span className="ml-2.5 text-gray-100">Get in Touch</span>
+              <span className="mx-2.5 text-gray-100">Get in Touch</span>
             </Button>
             <Button
               href="/#download"
-              className="hidden bg-secondary text-gray-800 lg:block"
+              className="mx-2.5 hidden bg-secondary text-gray-800 lg:block"
             >
               Download Now
             </Button>
