@@ -98,7 +98,7 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="/#features">
+                            <MobileNavLink href="/features">
                               Features
                             </MobileNavLink>
                             <MobileNavLink href="/about">About</MobileNavLink>
@@ -122,11 +122,11 @@ export function Header() {
               variant="outline"
               className="hidden lg:flex"
             >
-              <span className="ml-2.5 text-gray-100">Get in Touch</span>
+              <span className="mx-2.5 text-gray-100">Get in Touch</span>
             </Button>
             <Button
               href="/#download"
-              className="hidden bg-secondary text-gray-800 lg:block"
+              className="mx-2.5 hidden bg-secondary text-gray-800 lg:block"
             >
               Download Now
             </Button>

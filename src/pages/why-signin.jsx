@@ -1,6 +1,7 @@
 import React from 'react';
 import MainLayout from "@/layouts/MainLayout";
 import Link from "next/link";
+import Email from '@/components/Email'
 
 const BenefitSection = ({ title, content }) => (
   <div className="mb-6">
@@ -41,46 +42,73 @@ export default function WhySignIn() {
     <MainLayout title="Why Sign In | Doorbell">
       <div className="bg-white px-4 py-24 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          <h1 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Why Sign In to Doorbell?
           </h1>
           <p className="mb-8 text-lg text-gray-700">
-            At Doorbell, we&apos;re committed to providing you with the best possible food delivery experience.
-            Signing in to your account unlocks a range of benefits that make ordering easier, faster, and more
-            personalized. Here&apos;s why creating an account and staying signed in is worth it:
+            At Doorbell, we&apos;re committed to providing you with the best
+            possible food delivery experience. Signing in to your account
+            unlocks a range of benefits that make ordering easier, faster, and
+            more personalized. Here&apos;s why creating an account and staying
+            signed in is worth it:
           </p>
 
           {benefits.map((benefit, index) => (
             <BenefitSection key={index} {...benefit} />
           ))}
 
-          <div className="mt-12 bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-primary-dark">How We Handle Your Data</h2>
+          <div className="mt-12 rounded-lg bg-gray-50 p-6">
+            <h2 className="mb-4 text-2xl font-semibold text-primary-dark">
+              How We Handle Your Data
+            </h2>
             <p className="mb-4 text-gray-700">
-              We understand that your data is important, and we&apos;re committed to handling it responsibly and transparently:
+              We understand that your data is important, and we&apos;re
+              committed to handling it responsibly and transparently:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Your personal information is encrypted and stored securely.</li>
+            <ul className="list-disc space-y-2 pl-6 text-gray-700">
+              <li>
+                Your personal information is encrypted and stored securely.
+              </li>
               <li>We never sell your data to third parties.</li>
-              <li>You have full control over your data and can request to view, update, or delete it at any time.</li>
-              <li>We only use your data to improve your experience and provide the services you&apos;ve requested.</li>
-              <li>Our data practices comply with all relevant privacy laws and regulations.</li>
+              <li>
+                You have full control over your data and can request to view,
+                update, or delete it at any time.
+              </li>
+              <li>
+                We only use your data to improve your experience and provide the
+                services you&apos;ve requested.
+              </li>
+              <li>
+                Our data practices comply with all relevant privacy laws and
+                regulations.
+              </li>
             </ul>
             <p className="mt-4 text-gray-700">
-              For more details, please read our <Link href="/privacy" className="text-primary-dark hover:underline">Privacy Policy</Link>.
+              For more details, please read our{' '}
+              <Link
+                href="/privacy"
+                className="text-primary-dark hover:underline"
+              >
+                Privacy Policy
+              </Link>
+              .
             </p>
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="mb-4 text-lg text-gray-700">
               Ready to enhance your Doorbell experience?
             </p>
-            <Link href="/signup" className="bg-primary-dark text-white px-6 py-3 rounded-lg hover:bg-primary-darker transition duration-300">
+            <Link
+              href="/signup"
+              className="hover:bg-primary-darker rounded-lg bg-primary-dark px-6 py-3 text-white transition duration-300"
+            >
               Sign Up Now
             </Link>
           </div>
         </div>
       </div>
+      <Email />
     </MainLayout>
-  );
+  )
 }

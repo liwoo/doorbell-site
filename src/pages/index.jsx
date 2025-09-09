@@ -7,17 +7,21 @@ import Contact from '@/components/Contact'
 import Testimonies from '@/components/Testimonies'
 import Download from '@/components/Download'
 import MainLayout from '@/layouts/MainLayout'
+import Email from '@/components/Email'
+import OurClients from '@/components/OurClients'
 
 export default function Home() {
   return (
     <MainLayout>
       <Hero />
+      {/* TODO: Implement <OurClients />  */}
       <SecondaryFeatures />
       <CallToAction />
       <Reviews />
       <Contact />
       <Testimonies />
       <Download />
+      <Email />
     </MainLayout>
   )
 }

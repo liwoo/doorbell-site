@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
-import Email from '@/components/Email'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -38,7 +37,7 @@ export default function MainLayout({
         {children}
         <Analytics />
       </main>
-      <Email />
+      
       <Footer />
     </>
   )

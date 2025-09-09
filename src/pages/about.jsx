@@ -1,6 +1,7 @@
 import MainLayout from '@/layouts/MainLayout'
 import Link from 'next/link'
 import Image from 'next/image'
+import Email from '@/components/Email'
 
 export default function About() {
   const stats = [
@@ -154,6 +155,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <Email />
     </MainLayout>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import MainLayout from "@/layouts/MainLayout";
+import Email from '@/components/Email'
 
 const DeliveryStep = ({ title, description }) => (
   <div className="mb-8 border rounded-lg p-4 shadow-sm">
@@ -36,22 +37,25 @@ export default function DeliveryHelp() {
     <MainLayout title="Delivery Help | Doorbell">
       <div className="bg-white px-4 py-24 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          <h1 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Understanding Our Delivery Process
           </h1>
           <p className="mb-8 text-lg text-gray-700">
-            At Doorbell, we strive to make your delivery experience as smooth and transparent as possible.
-            Here&apos;s a step-by-step guide to help you understand our delivery process:
+            At Doorbell, we strive to make your delivery experience as smooth
+            and transparent as possible. Here&apos;s a step-by-step guide to
+            help you understand our delivery process:
           </p>
           {deliverySteps.map((step, index) => (
             <DeliveryStep key={index} {...step} />
           ))}
           <p className="mt-8 text-lg text-gray-700">
-            If you have any questions or concerns during any stage of the delivery process,
-            please don&apos;t hesitate to contact our customer support team. We&apos;re here to help!
+            If you have any questions or concerns during any stage of the
+            delivery process, please don&apos;t hesitate to contact our customer
+            support team. We&apos;re here to help!
           </p>
         </div>
       </div>
+      <Email />
     </MainLayout>
-  );
+  )
 }
