@@ -1,43 +1,5 @@
-@font-face {
-  font-family: 'TTNorms';
-  font-weight: 100 300;
-  font-display: block;
-  font-style: normal;
-  font-named-instance: 'Light';
-  src: url('/fonts/TTNorms-Light.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'TTNorms';
-  font-weight: 400 500;
-  font-display: block;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/TTNorms-Regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'TTNorms';
-  font-weight: 600 800;
-  font-display: block;
-  font-style: normal;
-  font-named-instance: 'Bold';
-  src: url('/fonts/TTNorms-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'TTNorms';
-  font-weight: bold;
-  font-display: block;
-  font-style: normal;
-  font-named-instance: 'ExtraBold';
-  src: url('/fonts/TTNorms-ExtraBold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'TTNorms';
-  font-weight: 100 900;
-  font-display: block;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/TTNorms-Italic.woff2') format('woff2');
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;

@@ -43,7 +43,7 @@ module.exports = {
         accent: "#FAF9E7"
       }),
       fontFamily: {
-        sans: ['TTNorms', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         'fade-in': {
