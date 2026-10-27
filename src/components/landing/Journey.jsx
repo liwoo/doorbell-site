@@ -692,9 +692,13 @@ export function Journey() {
         ))}
       </div>
 
-      {/* Stage */}
-      <div className="mt-10 grid gap-10 rounded-xl border border-white/10 bg-white/[0.03] p-6 sm:p-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-        <div key={`${stage}-${path}-text`} className="animate-fade-in">
+      {/* Stage: on mobile the visual sits between the title and the description;
+          on desktop the text stacks on the left with the visual on the right. */}
+      <div className="mt-10 grid gap-8 rounded-xl border border-white/10 bg-white/[0.03] p-6 sm:p-10 lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-10 lg:gap-y-0">
+        <div
+          key={`${stage}-${path}-title`}
+          className="animate-fade-in lg:col-start-1 lg:row-start-1 lg:self-end"
+        >
           <div className="flex items-center gap-3">
             <span className="font-display text-4xl font-black tracking-tight text-white">
               {ex.times[stage]}
@@ -706,7 +710,20 @@ export function Journey() {
           <h3 className="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">
             {pick(current.title, path)}
           </h3>
-          <p className="mt-4 max-w-lg leading-7 text-white/70">
+        </div>
+
+        <div
+          key={`${stage}-${path}-${speed}-visual`}
+          className="flex min-h-[22rem] animate-fade-in items-center justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1"
+        >
+          <Visual path={path} ex={ex} />
+        </div>
+
+        <div
+          key={`${stage}-${path}-details`}
+          className="animate-fade-in lg:col-start-1 lg:row-start-2 lg:self-start"
+        >
+          <p className="max-w-lg leading-7 text-white/70 lg:mt-4">
             {pick(current.body, path)}
           </p>
           {current.note && (
@@ -747,13 +764,6 @@ export function Journey() {
               {stage + 1} / {STAGES.length}
             </span>
           </div>
-        </div>
-
-        <div
-          key={`${stage}-${path}-${speed}-visual`}
-          className="flex min-h-[22rem] animate-fade-in items-center justify-center"
-        >
-          <Visual path={path} ex={ex} />
         </div>
       </div>
     </div>
