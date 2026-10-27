@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
-import { NavLinks } from '@/components/NavLinks'
+import { NAV_LINKS, NavLinks } from '@/components/NavLinks'
 
 function MenuIcon(props) {
   return (
@@ -37,7 +37,7 @@ function MobileNavLink({ children, ...props }) {
   return (
     <Popover.Button
       as={Link}
-      className="block text-base leading-7 tracking-tight text-gray-700"
+      className="block text-base leading-7 tracking-tight text-white/80 hover:text-white"
       {...props}
     >
       {children}
@@ -47,23 +47,23 @@ function MobileNavLink({ children, ...props }) {
 
 export function Header() {
   return (
-    <header className="absolute left-0 right-0 bg-primary">
+    <header className="absolute left-0 right-0 z-50 border-b border-white/10 bg-ink">
       <nav>
-        <Container className="relative z-50 flex justify-between py-8">
+        <Container className="relative z-50 flex justify-between py-6">
           <div className="relative z-10 flex items-center gap-16">
             <Link href="/" aria-label="Home">
               <Logo />
             </Link>
-            <div className="hidden lg:flex lg:gap-10">
+            <div className="hidden xl:flex xl:gap-10">
               <NavLinks />
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Popover className="lg:hidden">
+            <Popover className="xl:hidden">
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-white p-2 hover:bg-white/10 active:stroke-white [&:not(:focus-visible)]:focus:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>
@@ -83,7 +83,7 @@ export function Header() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="fixed inset-0 z-0 bg-gray-300/60 backdrop-blur"
+                          className="fixed inset-0 z-0 bg-ink/60 backdrop-blur"
                         />
                         <Popover.Panel
                           static
@@ -95,20 +95,22 @@ export function Header() {
                             y: -32,
                             transition: { duration: 0.2 },
                           }}
-                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
+                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-ink px-6 pb-6 pt-28 shadow-2xl shadow-black/40"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="/features">
-                              Features
-                            </MobileNavLink>
-                            <MobileNavLink href="/about">About</MobileNavLink>
-                            <MobileNavLink href="/#list">
-                              Setup Store
-                            </MobileNavLink>
-                            <MobileNavLink href="/support">FAQs</MobileNavLink>
+                            {NAV_LINKS.map(([label, href]) => (
+                              <MobileNavLink key={label} href={href}>
+                                {label}
+                              </MobileNavLink>
+                            ))}
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/#download">Download the app</Button>
+                            <Button
+                              href="/#get-started"
+                              className="bg-tape text-ink"
+                            >
+                              Get started
+                            </Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -118,17 +120,17 @@ export function Header() {
               )}
             </Popover>
             <Button
-              href="/#get-in-touch"
+              href="/#developers"
               variant="outline"
-              className="hidden lg:flex"
+              className="hidden whitespace-nowrap border-white/25 xl:flex"
             >
-              <span className="mx-2.5 text-gray-100">Get in Touch</span>
+              <span className="mx-2.5 text-white">For developers</span>
             </Button>
             <Button
-              href="/#download"
-              className="mx-2.5 hidden bg-secondary text-gray-800 lg:block"
+              href="/#get-started"
+              className="mx-2.5 hidden whitespace-nowrap bg-tape text-ink hover:bg-white lg:block"
             >
-              Download Now
+              Get started
             </Button>
           </div>
         </Container>
