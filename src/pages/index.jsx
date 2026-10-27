@@ -1,27 +1,28 @@
-import Head from 'next/head'
-import { CallToAction } from '@/components/CallToAction'
-import { Hero } from '@/components/Hero'
-import { Reviews } from '@/components/Reviews'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-import Contact from '@/components/Contact'
-import Testimonies from '@/components/Testimonies'
-import Download from '@/components/Download'
 import MainLayout from '@/layouts/MainLayout'
-import Email from '@/components/Email'
-import OurClients from '@/components/OurClients'
+import { Hero } from '@/components/landing/Hero'
+import { ProofBar } from '@/components/landing/ProofBar'
+import { Segments } from '@/components/landing/Segments'
+import { Platform } from '@/components/landing/Platform'
+import { DeliveryProcess } from '@/components/landing/DeliveryProcess'
+import { Onboarding } from '@/components/landing/Onboarding'
+import { Developers } from '@/components/landing/Developers'
+import { Pricing } from '@/components/landing/Pricing'
+import { Faqs } from '@/components/landing/Faqs'
+import { GetStarted } from '@/components/landing/GetStarted'
 
 export default function Home() {
   return (
     <MainLayout>
       <Hero />
-      {/* TODO: Implement <OurClients />  */}
-      <SecondaryFeatures />
-      <CallToAction />
-      <Reviews />
-      <Contact />
-      <Testimonies />
-      <Download />
-      <Email />
+      <ProofBar />
+      <Segments />
+      <DeliveryProcess />
+      <Pricing />
+      <Onboarding />
+      <Platform />
+      <Developers />
+      <Faqs />
+      <GetStarted />
     </MainLayout>
   )
 }

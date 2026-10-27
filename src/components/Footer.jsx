@@ -2,10 +2,12 @@ import { Logo } from '@/components/Logo'
 
 const navigation = {
   links: [
-    { name: 'About Us', href: '#' },
-    { name: 'FAQs', href: '/support' },
-    { name: 'Contact Us', href: '/#get-in-touch' },
-    { name: 'Request Features', href: 'https://doorbell.canny.io/' },
+    { name: 'Solutions', href: '/#solutions' },
+    { name: 'How it works', href: '/#how-it-works' },
+    { name: 'Developers', href: '/#developers' },
+    { name: 'Pricing', href: '/#pricing' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Get started', href: '/#get-started' },
   ],
   follow: [
     { name: 'Facebook', href: '#' },
@@ -21,7 +23,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900" aria-labelledby="footer-heading">
+    <footer className="border-t border-white/10 bg-ink" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -32,7 +34,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Links of Interest
+                  Doorbell for business
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.links.map((item) => (

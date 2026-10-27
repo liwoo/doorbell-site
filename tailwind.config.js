@@ -41,10 +41,21 @@ module.exports = {
           light: "#5378FF"
         },
         secondary: "#FFE45C",
-        accent: "#FAF9E7"
+        accent: "#FAF9E7",
+        // B2B landing tokens
+        ink: {
+          DEFAULT: "#0A1435",
+          soft: "#16224D",
+        },
+        tape: "#FFE45C",
+        paper: "#F2F5FB",
+        line: "#D6DCEB",
+        signal: "#12B76A",
       }),
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        display: ['Archivo', ...defaultTheme.fontFamily.sans],
+        mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
       },
       keyframes: {
         'fade-in': {
